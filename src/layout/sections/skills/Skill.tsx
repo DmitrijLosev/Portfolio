@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Icon} from "../../../components/icon/Icon";
+import {MyTheme} from "../../../components/styles/MyTheme.styles";
 
 
 type SkillPropsType = {
@@ -14,31 +15,37 @@ export const Skill: React.FC<SkillPropsType> = (props) => {
         <StyledSkillBox>
             <Icon iconId={props.iconId} width="120" height="120" viewBox={props.viewBox || "0 0 120 120"}/>
             <StyledSkillTitle>{props.skillItem}</StyledSkillTitle>
-            <StyledSkillMeter min={0} max={100} low={20} high={80} optimum={50}
-                              value={props.skillProgress}>Progress</StyledSkillMeter>
+            <StyledLabel htmlFor={props.skillItem} hidden>{props.skillItem}</StyledLabel>
+            <StyledSkillProgress id={props.skillItem} max={100}
+                              value={props.skillProgress}>Progress</StyledSkillProgress>
         </StyledSkillBox>
     );
 };
 
 
 const StyledSkillTitle = styled.h3`
-  color: var(--text, #BDEBEA);
-  font-family: Montserrat;
+  color: ${MyTheme.colors.primaryText}
+  font-family: Montserrat,sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  text-align: center;
 `
-const StyledSkillMeter = styled.meter`
+
+const StyledSkillProgress = styled.progress`
 
 `
 const StyledSkillBox = styled.div`
-  width: 20%;
+  min-width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #b07777;
-  
+  gap:20px;
+`
+const StyledLabel= styled.label`
+    
 `
