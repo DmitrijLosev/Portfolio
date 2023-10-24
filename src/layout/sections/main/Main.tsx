@@ -111,6 +111,8 @@ const Name = styled.h2`
 const PseudoDiv = styled.div`
   position: relative;
   padding: 20px 0 0 0;
+  overflow: hidden;
+  
 
 
   &::after {
@@ -201,7 +203,7 @@ const PseudoDiv = styled.div`
   }
   img:last-child{
     left:300px;
-    bottom:-80px;
+    bottom:-81px;
     overflow: hidden;
   }
 `
@@ -209,5 +211,5 @@ const StyledFone=styled.img`
   position: absolute;
   width: 460px;
   height: 330px;
-  z-index:2
+  z-index:2;
 `

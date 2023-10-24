@@ -26,4 +26,5 @@ export const StyledBtn = styled.button`
     color:${MyTheme.colors.primaryBgc};
     transform:translateY(3px);
   }
+  cursor: pointer;
   `

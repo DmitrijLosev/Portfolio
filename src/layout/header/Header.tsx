@@ -18,14 +18,14 @@ export const Header = () => {
             </MainContainer>
         </StyledHeader>
 
-);
+    );
 };
 
 const StyledHeader = styled.header`
-background-color: ${MyTheme.colors.primaryBgc};
-position:fixed;
-width:100%;
-height:100px;
-  z-index:9999;
-  
+  background-color: ${MyTheme.colors.primaryBgc};
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  z-index: 9999;
+
 `
