@@ -9,7 +9,7 @@ import {MainContainer} from "../../../components/MainContainer";
 import {StyledNavLink} from "../../../components/StyledNavLink";
 import styled from "styled-components";
 import {CodePhoto} from "./CodePhoto";
-
+import fone from "../../../assets/images/fone.svg";
 
 export const Main = () => {
     return (
@@ -30,6 +30,7 @@ export const Main = () => {
                             <CodePhoto/>
                             <CodePhoto/>
                             <CodePhoto/>
+                            <StyledFone src={fone} alt={"Fone for photo here"}/>
                         </PseudoDiv>
                         <FlexWrapper id="textFlexWrapper" direction="column" justify="center" align="start" wrap="wrap">
                             <MainTittle>WEB DEVELOPER</MainTittle>
@@ -122,6 +123,7 @@ const PseudoDiv = styled.div`
     background-size: cover;
     right: 25px;
     bottom: 100px;
+    z-index: 3;
   }
 
   &::before {
@@ -134,66 +136,78 @@ const PseudoDiv = styled.div`
     background-size: cover;
     right: 25px;
     bottom: 30px;
+    z-index: 3;
   }
 
   img:nth-child(2) {
-    top: 30px;
+    top: 50px;
     left: 30px;
   }
 
   img:nth-child(3) {
-    top: 85px;
+    top: 105px;
     left: 30px;
   }
 
   img:nth-child(4) {
-    top: 30px;
+    top: 50px;
     left: 115px;
   }
 
   img:nth-child(5) {
-    top: calc(85px + 55px);
+    top: calc(105px + 55px);
     left: 30px;
   }
 
   img:nth-child(6) {
-    top: calc(85px + 55px + 55px);
+    top: calc(105px + 55px + 55px);
     left: 30px;
   }
 
   img:nth-child(7) {
-    top: calc(85px + 55px + 55px + 55px);
+    top: calc(105px + 55px + 55px + 55px);
     left: 30px;
   }
 
   img:nth-child(8) {
-    top: 30px;
+    top: 50px;
     right: 25px;
   }
 
   img:nth-child(9) {
-    top: 30px;
+    top: 50px;
     right: 110px;
   }
 
   img:nth-child(10) {
-    top: calc(85px);
+    top: calc(105px);
     right: 25px;
   }
 
   img:nth-child(11) {
-    top: calc(85px + 55px);
+    top: calc(105px + 55px);
     right: 25px;
   }
 
   img:nth-child(12) {
-    top: calc(85px + 55px + 55px);
+    top: calc(105px + 55px + 55px);
     right: 25px;
   }
 
-  img:last-child {
-    top: calc(85px + 55px + 55px + 55px);
+  img:nth-child(13) {
+    top: calc(105px + 55px + 55px + 55px);
     right: 25px;
+    z-index:3;
   }
-
+  img:last-child{
+    left:300px;
+    bottom:-80px;
+    overflow: hidden;
+  }
+`
+const StyledFone=styled.img`
+  position: absolute;
+  width: 460px;
+  height: 330px;
+  z-index:2
 `
