@@ -8,28 +8,21 @@ import laptop from "../../../assets/images/laptop.svg"
 import {MainContainer} from "../../../components/MainContainer";
 import {StyledNavLink} from "../../../components/StyledNavLink";
 import styled from "styled-components";
-import {CodePhoto} from "./CodePhoto";
 import fone from "../../../assets/images/fone.svg";
+import codes from "../../../assets/images/codes.svg"
 
 export const Main = () => {
     return (
         <StyledMain id="Main">
                 <MainContainer id="container">
                     <FlexWrapper direction="row-reverse" justify="space-between" align="center" wrap="wrap">
+                        <ArrowLink id="arrowScroll" href="/#About me"><Icon iconId="arrowScroll" width="32"
+                                                                            height="32"
+                                                                            viewBox="0 0 32 32"/></ArrowLink>
                         <PseudoDiv>
                             <StyledPhoto src={photo} alt="Main photo here"/>
-                            <CodePhoto/>
-                            <CodePhoto/>
-                            <CodePhoto/>
-                            <CodePhoto/>
-                            <CodePhoto/>
-                            <CodePhoto/>
-                            <CodePhoto/>
-                            <CodePhoto/>
-                            <CodePhoto/>
-                            <CodePhoto/>
-                            <CodePhoto/>
-                            <CodePhoto/>
+                            <StyledCodesPhoto src={codes} alt={"Codes photo for main Photo"}/>
+                            <StyledCodesPhoto src={codes} alt={"Codes photo for main Photo"}/>
                             <StyledFone src={fone} alt={"Fone for photo here"}/>
                         </PseudoDiv>
                         <FlexWrapper id="textFlexWrapper" direction="column" justify="center" align="start" wrap="wrap">
@@ -39,9 +32,6 @@ export const Main = () => {
                                 officia consequat duis enim velit mollit. Exercitation veniam consequat
                                 sunt.</StyledText>
                             <StyledNavLink to="/contact" type="colored">Contact me</StyledNavLink>
-                            <ArrowLink id="arrowScroll" href="/#About me"><Icon iconId="arrowScroll" width="32"
-                                                                                height="32"
-                                                                                viewBox="0 0 32 32"/></ArrowLink>
                         </FlexWrapper>
                     </FlexWrapper>
                 </MainContainer>
@@ -52,18 +42,21 @@ export const Main = () => {
 const StyledMain = styled.section`
   min-height: 100vh;
   padding-top: 100px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
   ${StyledNavLink} {
     margin: 20px 0 10px 0;
   }
-  
+
   ${FlexWrapper}[id="textFlexWrapper"] {
     position: relative;
-    padding-top: 20px;
     max-width: 500px;
     width: 100%;
     gap: 10px;
+    padding: 30px 0 40px 0;
   }
 
   h1 {
@@ -72,8 +65,8 @@ const StyledMain = styled.section`
 `
 const ArrowLink = styled.a`
   position: absolute;
-  bottom: -15%;
-  right: 5%;;
+  bottom: 0;
+  right: 50%;;
 
   &:hover svg {
     transform: scale(2) translateY(-10px);
@@ -85,9 +78,11 @@ const ArrowLink = styled.a`
 const StyledPhoto = styled.img`
   max-width: 500px;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border: 20px solid;
   border-image: repeating-linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%) 1;
+  
 `
 
 export const MainTittle = styled.h1`
@@ -110,8 +105,8 @@ const Name = styled.h2`
 `
 const PseudoDiv = styled.div`
   position: relative;
-  padding: 20px 0 0 0;
   overflow: hidden;
+  max-height: 500px;
   
 
 
@@ -142,65 +137,14 @@ const PseudoDiv = styled.div`
   }
 
   img:nth-child(2) {
-    top: 50px;
-    left: 30px;
+    top: 0;
+    left: 35px;
   }
-
   img:nth-child(3) {
-    top: 105px;
-    left: 30px;
+    top: 0;
+    left: 360px;
   }
-
-  img:nth-child(4) {
-    top: 50px;
-    left: 115px;
-  }
-
-  img:nth-child(5) {
-    top: calc(105px + 55px);
-    left: 30px;
-  }
-
-  img:nth-child(6) {
-    top: calc(105px + 55px + 55px);
-    left: 30px;
-  }
-
-  img:nth-child(7) {
-    top: calc(105px + 55px + 55px + 55px);
-    left: 30px;
-  }
-
-  img:nth-child(8) {
-    top: 50px;
-    right: 25px;
-  }
-
-  img:nth-child(9) {
-    top: 50px;
-    right: 110px;
-  }
-
-  img:nth-child(10) {
-    top: calc(105px);
-    right: 25px;
-  }
-
-  img:nth-child(11) {
-    top: calc(105px + 55px);
-    right: 25px;
-  }
-
-  img:nth-child(12) {
-    top: calc(105px + 55px + 55px);
-    right: 25px;
-  }
-
-  img:nth-child(13) {
-    top: calc(105px + 55px + 55px + 55px);
-    right: 25px;
-    z-index:3;
-  }
+  
   img:last-child{
     left:300px;
     bottom:-81px;
@@ -212,4 +156,9 @@ const StyledFone=styled.img`
   width: 460px;
   height: 330px;
   z-index:2;
+`
+const StyledCodesPhoto = styled.img`
+  position: absolute;
+  width: 350px;
+  height: 170px;
 `

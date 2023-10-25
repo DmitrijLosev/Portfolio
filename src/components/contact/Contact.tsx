@@ -3,7 +3,7 @@ import {Header} from "../../layout/header/Header";
 import {FlexWrapper} from "../FlexWrapper";
 import {MainTittle} from "../../layout/sections/main/Main";
 import styled from "styled-components";
-import {StyledBtn} from "../Button";
+import {StyledBtn} from "../StyledButton";
 import {MainContainer} from "../MainContainer";
 import {InputField, StyledLabel} from "../input/InputField";
 import {MyTheme} from "../styles/MyTheme.styles";

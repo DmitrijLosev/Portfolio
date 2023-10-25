@@ -40,5 +40,6 @@ const StyledSkillSection = styled.section`
   }
   ${FlexWrapper}[id="skillwrapper"]{
     row-gap: 30px;
+    column-gap: 30px;
   }
 `

@@ -27,7 +27,7 @@ export const GlobalStyles=createGlobalStyle`
       background-color: unset;
       border:none;
     }
-    progress {
+   /* progress {
       width: 40%;
       position: relative;
     }
@@ -41,5 +41,5 @@ export const GlobalStyles=createGlobalStyle`
       background: ${MyTheme.colors.primaryText};
       color: ${MyTheme.colors.primaryBgc};
       font-weight: bold;
-    }
+    }*/
     `
