@@ -15,7 +15,7 @@ export const Main = () => {
     return (
         <StyledMain id="Main">
                 <MainContainer id="container">
-                    <FlexWrapper direction="row-reverse" justify="space-between" align="center" wrap="wrap">
+                    <FlexWrapper id="MainSectionFlexWrapper" direction="row-reverse" justify="center" align="center" wrap="wrap">
                         <ArrowLink id="arrowScroll" href="/#About me"><Icon iconId="arrowScroll" width="32"
                                                                             height="32"
                                                                             viewBox="0 0 32 32"/></ArrowLink>
@@ -46,7 +46,11 @@ const StyledMain = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-
+  
+${FlexWrapper}[id="MainSectionFlexWrapper"] {
+  gap:30px;
+}
+  
   ${StyledNavLink} {
     margin: 20px 0 10px 0;
   }
