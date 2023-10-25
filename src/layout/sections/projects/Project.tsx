@@ -80,7 +80,7 @@ export const Project: React.FC<{ showAllProjects: boolean }> = (props) => {
                             <StyledProjectTitlePhoto src={projectItem.projectTitlePhoto} alt=""/>
                         </StyledPhotoWrapper>
                         <StyledProjectTitle>{projectItem.projectTitle}</StyledProjectTitle>
-                        <FlexWrapper id="skillsSpans">
+                        <FlexWrapper id="skillsSpans" wrap="wrap">
                             {projectItem.projectUsedSkills.map((skillItem: string, index: number) => (
                                 <StyledSpan key={index}>{skillItem}</StyledSpan>
                             ))}
@@ -121,7 +121,6 @@ const StyledProjectBox = styled.div`
     gap: 12px;
     max-width: 475px;
     padding: 10px 0 0 25px;
-    width: 100%;
   }
 
   ${FlexWrapper}[id="projectWrapper"] {

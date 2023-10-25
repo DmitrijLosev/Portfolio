@@ -10,7 +10,7 @@ export const Footer = () => {
     return (
         <StyledFooter id="Contact">
             <MainContainer>
-                    <FlexWrapper direction="column" align="center" justify="flex-end">
+                    <FlexWrapper direction="column" align="center" justify="center">
                         <SocialList>
                             <SocialItem>
                                 <SocialNetworkLink href="mailto:elk8143228@gmail.com" target="_blank">
@@ -99,7 +99,10 @@ export const Footer = () => {
 
 
 const StyledFooter = styled.footer`
-  height: 50vh;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   ${FlexWrapper} {
     gap: 45px;
@@ -157,5 +160,4 @@ const SocialNetworkLink = styled.a`
 `
 
 const Copyright = styled.small`
-    padding-bottom:90px;
 `
