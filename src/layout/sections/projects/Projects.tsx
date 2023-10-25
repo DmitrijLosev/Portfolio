@@ -4,7 +4,6 @@ import {StyledSectionTitle} from "../../../components/StyledSectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Project} from "./Project";
 import {MainContainer} from "../../../components/MainContainer";
-import {MyTheme} from "../../../components/styles/MyTheme.styles";
 import {StyledBtn} from "../../../components/StyledButton";
 
 export const Projects = () => {

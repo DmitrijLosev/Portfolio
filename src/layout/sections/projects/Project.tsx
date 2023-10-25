@@ -200,6 +200,7 @@ const StyledProjectLink = styled.a`
   background-image: linear-gradient(90deg, #00F5A0 0%, #00F5A0 100%);
   color: ${MyTheme.colors.secondaryText};
   z-index: 1;
+  font-weight: 600;
 
   &:hover {
     background-image: unset;

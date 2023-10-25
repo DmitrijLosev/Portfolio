@@ -27,19 +27,4 @@ export const GlobalStyles=createGlobalStyle`
       background-color: unset;
       border:none;
     }
-   /* progress {
-      width: 40%;
-      position: relative;
-    }
-
-    progress::after {
-      content: attr(value);
-      position: absolute;
-      top: 0;
-      right: -30px;
-      padding: 5px;
-      background: ${MyTheme.colors.primaryText};
-      color: ${MyTheme.colors.primaryBgc};
-      font-weight: bold;
-    }*/
     `

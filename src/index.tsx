@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <ThemeProvider theme={MyTheme}>
-        <BrowserRouter>
+        <BrowserRouter basename="/Portfolio">
             <Routes>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/" element={<App/>}/>
