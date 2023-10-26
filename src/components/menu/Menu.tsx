@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import {StyledNavLink} from "../StyledNavLink";
-import {MyTheme} from "../styles/MyTheme.styles";
 
 
 
