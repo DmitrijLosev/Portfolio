@@ -62,9 +62,9 @@
     </g>
 
     <g id="reactjsSkill">
-        <rect width="120" height="120" fill="#F5F5F5"/>
+        <rect width="120" height="120" fill="transparent"/>
         <g id="spa-dark">
-            <rect width="1440" height="3474" transform="translate(-910 -2478)" fill="#041F31"/>
+            <rect width="1440" height="3474" transform="translate(-910 -2478)" fill="transparent"/>
             <g id="skills">
                 <g id="react js">
                     <g id="icon">
