@@ -16,9 +16,7 @@ export const StyledBtn = styled.button`
   text-align: center;
   font-family: Montserrat, sans-serif;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
   align-self:center;
   &:hover {
     background-image: unset;
@@ -26,8 +24,4 @@ export const StyledBtn = styled.button`
     color:${MyTheme.colors.primaryBgc};
     transform:translateY(3px);
   }
-  cursor: pointer;
- /* &:focus-visible {
-    outline:3px solid ${MyTheme.colors.primaryText}
-  }*/
   `

@@ -4,7 +4,6 @@ import {MyTheme} from "./styles/MyTheme.styles";
 
 export const StyledNavLink = styled(NavLink)<{ type?: 'colored' }>`
   color: ${MyTheme.colors.primaryText};
-  font-family: Montserrat, sans-serif;
   font-size: 16px;
   font-weight: 500;
 

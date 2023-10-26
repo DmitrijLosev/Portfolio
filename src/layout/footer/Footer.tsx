@@ -14,7 +14,8 @@ export const Footer = () => {
                     <nav role="navigation">
                         <SocialList role="menu" aria-label="menu">
                             <SocialItem role={"menuitem"} aria-label="SocialMedia1">
-                                <SocialNetworkLink role="link" aria-label="GmAil" href="mailto:elk8143228@gmail.com" target="_blank">
+                                <SocialNetworkLink role="link" aria-label="GmAil" href="mailto:elk8143228@gmail.com"
+                                                   target="_blank">
                                     <svg id="gmail" width="38px" height="38px">
                                         <g id="navGmail">
                                             <circle cx="19.2479" cy="18.8683" r="18.8683"
@@ -64,7 +65,8 @@ export const Footer = () => {
                                 </SocialNetworkLink>
                             </SocialItem>
                             <SocialItem role={"menuitem"} aria-label="SocialMedia3">
-                                <SocialNetworkLink role="link" aria-label="github" href="https://www.github.com/DmitrijLosev" target="_blank">
+                                <SocialNetworkLink role="link" aria-label="github"
+                                                   href="https://www.github.com/DmitrijLosev" target="_blank">
                                     <svg id="git" width="38px" height="38px">
                                         <g id="navGithub">
                                             <circle cx="19.2142" cy="18.8683" r="18.8683" fill="#1F2626"/>
@@ -103,17 +105,21 @@ export const Footer = () => {
 
 
 const StyledFooter = styled.footer`
-  min-height: 50vh;
+  min-height: 70vh;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: center;
+  padding: 0 0 100px 0;
 
   ${FlexWrapper} {
-    gap: 45px;
+    gap: 50px;
+    max-width: 320px;
+    margin:0 auto;
   }
 
   ul[id="linkMenu"] {
-    gap: 50px;
+    gap: 25px;
+    
 
     li {
       &:active, &:hover {
@@ -130,9 +136,12 @@ const StyledFooter = styled.footer`
 `
 const SocialList = styled.ul`
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 100px;
   list-style: none;
   flex-wrap: wrap;
+  
 `
 const SocialItem = styled.li`
 
@@ -141,7 +150,7 @@ const SocialItem = styled.li`
 const SocialNetworkLink = styled.a`
   &:hover svg[id="gmail"] circle {
     fill: ${MyTheme.colors.primaryText}
-    
+
   }
 
   &:hover svg[id="gmail"] path {
@@ -167,7 +176,7 @@ const SocialNetworkLink = styled.a`
   &:hover svg {
     transform: translateY(3px);
   }
-  
+
 `
 
 const Copyright = styled.small`

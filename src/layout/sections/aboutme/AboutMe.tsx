@@ -2,7 +2,6 @@ import React from 'react';
 import {StyledSectionTitle} from "../../../components/StyledSectionTitle";
 import {StyledText} from "../../../components/StyledText";
 import styled from "styled-components";
-import line from "../../../assets/images/line.svg"
 import {MainContainer} from "../../../components/MainContainer";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 
@@ -11,7 +10,6 @@ export const AboutMe = () => {
     return (
         <StyledSection id="About me" role="region" aria-label="about me">
             <MainContainer>
-                <FlexWrapper direction="column" justify="center" align="start" wrap="wrap">
                 <StyledSectionTitle role="heading" aria-level={2}>
                     About me
                 </StyledSectionTitle>
@@ -22,17 +20,16 @@ export const AboutMe = () => {
                     placed within this chamber during the Neolithic period, representing at least nine or ten
                     individuals.
                 </StyledTextPseudo>
-                </FlexWrapper>
             </MainContainer>
         </StyledSection>
     );
 };
 
 const StyledSection = styled.section`
-  min-height: calc(70vh - 100px);
+  min-height: calc(70vh);
   
   ${StyledSectionTitle}{
-    padding:100px 0 20px 0;
+    padding:260px 0 20px;
   }
 
 `
@@ -45,7 +42,8 @@ const StyledTextPseudo = styled(StyledText)`
     content: "";
     width: 5px;
     height: 100%;
-    background-image: url(${line});
+    background-image: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
+    border-radius: 2px;
     display: inline-block;
     position: absolute;
     background-size: cover;

@@ -140,7 +140,6 @@ const StyledProjectBox = styled.div`
 `
 const StyledProjectTitle = styled.h3`
   color: #D9F2F2;
-  font-family: Montserrat, sans-serif;
   font-size: 20px;
   font-weight: 600;
   padding-left: 25px;
@@ -159,7 +158,6 @@ const StyledProjectTitlePhoto = styled.img`
 export const StyledSpan = styled.span`
   color: #1F2626;
   text-align: center;
-  font-family: Montserrat, sans-serif;
   font-size: 10px;
   font-weight: 400;
   line-height: 14px;

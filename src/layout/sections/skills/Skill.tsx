@@ -36,8 +36,6 @@ export const Skill: React.FC<SkillPropsType> = (props) => {
 
 
 const StyledSkillTitle = styled.h3`
-  color: ${MyTheme.colors.primaryText}
-  font-family: Montserrat, sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 2px;
@@ -64,7 +62,7 @@ const StyledSkillBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   svg {
     filter:drop-shadow(5px 5px 5px #00F5A0);
   }

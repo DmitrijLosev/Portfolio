@@ -16,18 +16,16 @@ export const InputField:React.FC<{type:"text" | "email", placeholder:string, lab
 
 const StyledInput= styled.input`
   border-radius: 6px;
-  min-width: 500px;
-  margin-bottom: 10px;
+  margin:0 0 26px 0;
   border: 1px solid ${MyTheme.colors.primaryText};
   background-color: transparent;
-  line-height: 45px;
   color: ${MyTheme.colors.primaryText};
   font-family: Montserrat, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  text-indent: 1em;
   outline: none;
-  
+  padding:15px 18px;
+  width:100%;
   input:active + span {
     display: none;
   }
@@ -39,7 +37,6 @@ const StyledInput= styled.input`
 
   input::placeholder {
     color: #919B9B;
-    font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-weight: 400;
   }
@@ -49,16 +46,14 @@ const StyledSpan=styled.span`
   position: absolute;
   display: block;
   right:0;
+  bottom:7px;
   color: #C05353;
   text-align: center;
-  font-family: Montserrat, sans-serif;
   font-size: 14px;
   font-weight: 500;
   align-content: center;
 `
 export const StyledLabel = styled.label`
-  color: ${MyTheme.colors.primaryText};
-  font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 400;
   position:absolute;
@@ -68,6 +63,7 @@ export const StyledLabel = styled.label`
 `
 const StyledDiv = styled.div`
   position:relative;
+  width:100%;
   input:focus + span {
     display: none;
   }

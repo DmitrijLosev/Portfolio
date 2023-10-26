@@ -15,7 +15,6 @@ export const Contact = () => {
             <main>
         <ContactSection role="region" aria-label="Contact Me">
             <MainContainer>
-                <FlexWrapper direction="column" align="center" justify="center">
                     <MainTittle role="heading" aria-level={1}>CONTACT ME</MainTittle>
                     <StyledForm role="form">
                         <InputField id="name" type="text" placeholder="Enter your name" label="Name"/>
@@ -28,7 +27,6 @@ export const Contact = () => {
                             </StyledPositionDiv>
                                 <StyledContactBtn role="button" aria-label="send form" type="submit">Submit</StyledContactBtn>
                     </StyledForm>
-                </FlexWrapper>
             </MainContainer>
         </ContactSection>
             </main>
@@ -38,47 +36,54 @@ export const Contact = () => {
 };
 
 const ContactSection= styled.section`
-height: 100vh;
+min-height: 100vh;
 padding:100px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${MainTittle} {
+    text-align: center;
+  }
 `
 
 
 const StyledForm = styled.form`
-padding-top:50px;
+padding-top:30px;
 display: flex;
 flex-direction: column;
+  justify-content: center;
 align-items: center;
-gap: 30px;
+gap: 22px;
+  max-width:530px;
+  margin:0 auto;
 `
 
 
 
 const StyledContactBtn =styled(StyledBtn)`
-width: 100%;
 height: 50px;
 padding:12px 20px;
-  cursor: pointer;
+  width: 100%;
+  
 `
 const StyledTextarea = styled.textarea`
   border-radius: 6px;
-  min-width: 500px;
-  min-height: 150px;
+  max-width: 530px;
+  width:100%;
   border: 1px solid ${MyTheme.colors.primaryText};
   background-color: transparent;
-  line-height: 45px;
   color: ${MyTheme.colors.primaryText};
   font-family: Montserrat,sans-serif;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  text-indent: 1em;
   outline: none;
+  padding:15px 18px;
 
   &:focus-visible {
     outline: 1px solid var(--gradient, #00F5A0);
-    border:1px solid var(--gradient, #00F5A0);
   }
 `
 const StyledPositionDiv=styled.div`
   position:relative;
+  width: 100%;
 `

@@ -19,34 +19,35 @@ export const Projects = () => {
     return (
         <StyledProjectsSection id="Projects" role="region" aria-label="projects">
             <MainContainer>
-                <FlexWrapper id="allprojects" direction="column">
             <StyledSectionTitle role="heading" aria-level={2}>Projects</StyledSectionTitle>
-            <FlexWrapper id="cardsWrapper" wrap="wrap" justify="center">
+            <FlexWrapper id="cardsWrapper" wrap="wrap" justify="center" align="start">
                 <Project showAllProjects={showAllProjects}/>
             </FlexWrapper>
             {!showAllProjects ? <StyledBtn role="button" aria-label="showAllProjects" onClick={showAllProject}>SEE ALL PROJECTS</StyledBtn> :
                 <StyledBtn role="button" aria-label="hideAllProjects" onClick={hideAllProject}>HIDE ALL PROJECTS</StyledBtn>}
-                </FlexWrapper>
             </MainContainer>
         </StyledProjectsSection>
     );
 };
 
 const StyledProjectsSection = styled.section`
-min-height: 100vh;
+  min-height: 100vh;
+
   h2 {
     padding: 100px 0 0 0;
     max-width: 1080px;
     width: 100%;
-    align-self:flex-end;
+    align-self: flex-end;
   }
-  ${FlexWrapper}[id="allprojects"]{
-    gap:30px;
+
+  ${FlexWrapper}[id="cardsWrapper"] {
+    column-gap: 28px;
+    row-gap: 28px;
+    padding: 32px 0 37px 0;
   }
-  ${FlexWrapper}[id="cardsWrapper"]{
-    column-gap: 30px;
-    row-gap: 30px;
-    
+
+  button {
+    margin: 0 auto;
   }
 `
 
