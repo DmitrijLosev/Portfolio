@@ -27,4 +27,7 @@ export const StyledBtn = styled.button`
     transform:translateY(3px);
   }
   cursor: pointer;
+ /* &:focus-visible {
+    outline:3px solid ${MyTheme.colors.primaryText}
+  }*/
   `

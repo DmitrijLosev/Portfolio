@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {StyledNavLink} from "../StyledNavLink";
+import {MyTheme} from "../styles/MyTheme.styles";
 
 
 
@@ -9,16 +10,16 @@ export const Menu:React.FC<{menuItems:string[]}> = (props) => {
 
 
     return (
-        <StyledMenu>
-            <ul id="linkMenu">
+        <StyledMenu role="navigation">
+            <ul id="linkMenu" role="menu" aria-label="menu">
                 {props.menuItems.map((item, index) => (
-                    <li key={index}>
+                    <li role={"menuitem"} key={index}>
                         {item === "Contact Me" ? (
-                            <StyledNavLink to="/contact" id={item}>
+                            <StyledNavLink role="link" aria-label="mail me" to="/contact" id={item}>
                                 {item}
                             </StyledNavLink>
                         ) : (
-                            <StyledNavLink
+                            <StyledNavLink role="link" aria-label={item}
                                 to={`/#${item}`}
                                 id={`${item}-${index}`}
                                 type={index === 3 ? "colored" : undefined}
@@ -40,12 +41,13 @@ const StyledMenu=styled.nav`
     align-items: center;
     gap: 30px;
     list-style: none;
-    
-    
+
 
     li:nth-of-type(-n+3) {
       position: relative;
-      &:active, &:hover {
+      outline: 2px solid transparent;
+
+      &:hover {
         &::before {
           content: "";
           display: inline-block;
@@ -59,7 +61,6 @@ const StyledMenu=styled.nav`
         }
       }
     }
-
-
-  }
+    
+  } 
 `

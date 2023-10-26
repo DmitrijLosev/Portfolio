@@ -12,22 +12,26 @@ import {MyTheme} from "../styles/MyTheme.styles";
 export const Contact = () => {
     return (<>
         <Header/>
-        <ContactSection>
+            <main>
+        <ContactSection role="region" aria-label="Contact Me">
             <MainContainer>
                 <FlexWrapper direction="column" align="center" justify="center">
-                    <MainTittle>CONTACT ME</MainTittle>
-                    <StyledForm>
+                    <MainTittle role="heading" aria-level={1}>CONTACT ME</MainTittle>
+                    <StyledForm role="form">
                         <InputField id="name" type="text" placeholder="Enter your name" label="Name"/>
                         <InputField id="email" type="email" placeholder="Enter your e-mail" label="Email"/>
                         <StyledPositionDiv>
-                            <StyledTextarea id="message" placeholder="Hi, i will ..."></StyledTextarea>
-                            <StyledLabel htmlFor="message">Message</StyledLabel>
+                            <StyledTextarea id="message" placeholder="Enter your message"
+                                            aria-placeholder="Enter your message" aria-required="true">
+                            </StyledTextarea>
+                            <StyledLabel htmlFor="message" aria-labelledby="message" >Message</StyledLabel>
                             </StyledPositionDiv>
-                                <StyledContactBtn type="submit">Submit</StyledContactBtn>
+                                <StyledContactBtn role="button" aria-label="send form" type="submit">Submit</StyledContactBtn>
                     </StyledForm>
                 </FlexWrapper>
             </MainContainer>
         </ContactSection>
+            </main>
     </>
 )
 ;
@@ -71,7 +75,8 @@ const StyledTextarea = styled.textarea`
   outline: none;
 
   &:focus-visible {
-    border: 1px solid var(--gradient, #00F5A0);
+    outline: 1px solid var(--gradient, #00F5A0);
+    border:1px solid var(--gradient, #00F5A0);
   }
 `
 const StyledPositionDiv=styled.div`

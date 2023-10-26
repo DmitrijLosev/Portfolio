@@ -17,15 +17,15 @@ export const Projects = () => {
     }
 
     return (
-        <StyledProjectsSection id="Projects">
+        <StyledProjectsSection id="Projects" role="region" aria-label="projects">
             <MainContainer>
                 <FlexWrapper id="allprojects" direction="column">
-            <StyledSectionTitle>Projects</StyledSectionTitle>
+            <StyledSectionTitle role="heading" aria-level={2}>Projects</StyledSectionTitle>
             <FlexWrapper id="cardsWrapper" wrap="wrap" justify="center">
                 <Project showAllProjects={showAllProjects}/>
             </FlexWrapper>
-            {!showAllProjects ? <StyledBtn onClick={showAllProject}>SEE ALL PROJECTS</StyledBtn> :
-                <StyledBtn onClick={hideAllProject}>HIDE ALL PROJECTS</StyledBtn>}
+            {!showAllProjects ? <StyledBtn role="button" aria-label="showAllProjects" onClick={showAllProject}>SEE ALL PROJECTS</StyledBtn> :
+                <StyledBtn role="button" aria-label="hideAllProjects" onClick={hideAllProject}>HIDE ALL PROJECTS</StyledBtn>}
                 </FlexWrapper>
             </MainContainer>
         </StyledProjectsSection>

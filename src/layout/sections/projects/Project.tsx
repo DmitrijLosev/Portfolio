@@ -70,45 +70,55 @@ export const Project: React.FC<{ showAllProjects: boolean }> = (props) => {
 
 
     return (<>
-    {
-        !props.showAllProjects
-            ? ProjectsItemsStart.map((projectItem) => (
-                <StyledProjectBox key={projectItem.projectId}>
-                    <FlexWrapper id="projectWrapper" direction="column">
-                        <StyledPhotoWrapper>
-                            <StyledProjectLink href={projectItem.linkOnGitHub} target="_blank">Link to GitHub</StyledProjectLink>
-                            <StyledProjectTitlePhoto src={projectItem.projectTitlePhoto} alt=""/>
-                        </StyledPhotoWrapper>
-                        <StyledProjectTitle>{projectItem.projectTitle}</StyledProjectTitle>
-                        <FlexWrapper id="skillsSpans" wrap="wrap">
-                            {projectItem.projectUsedSkills.map((skillItem: string, index: number) => (
-                                <StyledSpan key={index}>{skillItem}</StyledSpan>
-                            ))}
-                        </FlexWrapper>
-                        <StyledProjectText>{projectItem.projectDescription}</StyledProjectText>
-                    </FlexWrapper>
-                </StyledProjectBox>
-            ))
-            : ProjectsItems.map((projectItem) => (
-                <StyledProjectBox key={projectItem.projectId}>
-                    <FlexWrapper id="projectWrapper" direction="column">
-                    <StyledPhotoWrapper>
-                        <StyledProjectLink href={projectItem.linkOnGitHub} target="_blank">Link to GitHub</StyledProjectLink>
-                    <StyledProjectTitlePhoto src={projectItem.projectTitlePhoto} alt=""/>
-                </StyledPhotoWrapper>
-        <StyledProjectTitle>{projectItem.projectTitle}</StyledProjectTitle>
-    <FlexWrapper id="skillsSpans" wrap="wrap">
-        {projectItem.projectUsedSkills.map((skillItem: string, index: number) => (
-            <StyledSpan key={index}>{skillItem}</StyledSpan>
-        ))}
-    </FlexWrapper>
-    <StyledProjectText>{projectItem.projectDescription}</StyledProjectText>
-</FlexWrapper>
-</StyledProjectBox>
-))
-}
-</>
-)
+            {
+                !props.showAllProjects
+                    ? ProjectsItemsStart.map((projectItem) => (
+                        <StyledProjectBox key={projectItem.projectId}>
+                            <FlexWrapper id="projectWrapper" direction="column">
+                                <StyledPhotoWrapper>
+                                    <StyledProjectLink role="link" aria-label="LinkToGitHub" href={projectItem.linkOnGitHub}
+                                                       target="_blank">Link to GitHub</StyledProjectLink>
+                                    <StyledProjectTitlePhoto aria-label="project-title" role="img"
+                                                             src={projectItem.projectTitlePhoto}
+                                                             alt="Project's Tittle photo is here"/>
+                                </StyledPhotoWrapper>
+                                <StyledProjectTitle role="heading"
+                                                    aria-level={3}>{projectItem.projectTitle}</StyledProjectTitle>
+                                <FlexWrapper id="skillsSpans" wrap="wrap">
+                                    {projectItem.projectUsedSkills.map((skillItem: string, index: number) => (
+                                        <StyledSpan key={index} role="generic" aria-label="tools">{skillItem}</StyledSpan>
+                                    ))}
+                                </FlexWrapper>
+                                <StyledProjectText role="paragraph"
+                                                   aria-label="project-description">{projectItem.projectDescription}</StyledProjectText>
+                            </FlexWrapper>
+                        </StyledProjectBox>
+                    ))
+                    : ProjectsItems.map((projectItem) => (
+                        <StyledProjectBox key={projectItem.projectId}>
+                            <FlexWrapper id="projectWrapper" direction="column">
+                                <StyledPhotoWrapper>
+                                    <StyledProjectLink role="link" aria-label="LinkToGitHub" href={projectItem.linkOnGitHub}
+                                                       target="_blank">Link to GitHub</StyledProjectLink>
+                                    <StyledProjectTitlePhoto aria-label="project-title" role="img"
+                                                             src={projectItem.projectTitlePhoto}
+                                                             alt="Project's Tittle photo is here"/>
+                                </StyledPhotoWrapper>
+                                <StyledProjectTitle role="heading"
+                                                    aria-level={3}>{projectItem.projectTitle}</StyledProjectTitle>
+                                <FlexWrapper id="skillsSpans" wrap="wrap">
+                                    {projectItem.projectUsedSkills.map((skillItem: string, index: number) => (
+                                        <StyledSpan role="generic" aria-label="tool" key={index}>{skillItem}</StyledSpan>
+                                    ))}
+                                </FlexWrapper>
+                                <StyledProjectText role="paragraph"
+                                                   aria-label="project-description">{projectItem.projectDescription}</StyledProjectText>
+                            </FlexWrapper>
+                        </StyledProjectBox>
+                    ))
+            }
+        </>
+    )
 
 }
 
@@ -132,9 +142,7 @@ const StyledProjectTitle = styled.h3`
   color: #D9F2F2;
   font-family: Montserrat, sans-serif;
   font-size: 20px;
-  font-style: normal;
   font-weight: 600;
-  line-height: normal;
   padding-left: 25px;
   max-width: 450px;
   padding-top: 30px;
@@ -142,17 +150,17 @@ const StyledProjectTitle = styled.h3`
 
 const StyledProjectTitlePhoto = styled.img`
   width: 100%;
+  max-width: 500px;
   object-fit: cover;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  
+
 `
 export const StyledSpan = styled.span`
   color: #1F2626;
   text-align: center;
   font-family: Montserrat, sans-serif;
   font-size: 10px;
-  font-style: normal;
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 1.2px;
@@ -174,19 +182,23 @@ const StyledProjectText = styled(StyledText)`
   padding: 20px 25px 30px 25px
 `
 
-const StyledPhotoWrapper=styled.div`
-position:relative;
-  cursor:pointer;
-  overflow:hidden;
+const StyledPhotoWrapper = styled.div`
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+
   &:hover a {
-    top:50%;
-    right:50%;
-    transform:translate(50%,-50%)
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%)
   }
-&:hover img{
-  transform: skew(30deg);
-  opacity:0.5 ;
-}
+
+  &:hover img {
+    transform: skew(30deg);
+    opacity: 0.5;
+    transition: .2s;
+  }
+ 
 `
 const StyledProjectLink = styled.a`
   position: absolute;
@@ -200,6 +212,10 @@ const StyledProjectLink = styled.a`
   color: ${MyTheme.colors.secondaryText};
   z-index: 1;
   font-weight: 600;
+  &:focus-visible {
+    outline:none;
+    border:3px solid ${MyTheme.colors.primaryText};
+  }
 
   &:hover {
     background-image: unset;

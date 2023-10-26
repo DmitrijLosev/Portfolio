@@ -9,7 +9,7 @@ import {MyTheme} from "../../components/styles/MyTheme.styles";
 const menuItems = ["About me", "Skills", "Projects", "Contact"]
 export const Header = () => {
     return (
-        <StyledHeader>
+        <StyledHeader role="banner">
             <MainContainer>
                 <FlexWrapper justify="space-between" align="center" wrap="wrap">
                     <Logo/>

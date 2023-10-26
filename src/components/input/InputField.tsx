@@ -6,9 +6,10 @@ export const InputField:React.FC<{type:"text" | "email", placeholder:string, lab
     ({type,placeholder,label,id}) => {
         return (
             <StyledDiv>
-                <StyledLabel htmlFor={id}>{label}</StyledLabel>
-                <StyledInput  id={id} type={type} placeholder={placeholder}/>
-                <StyledSpan hidden>input required</StyledSpan>
+                <StyledLabel htmlFor={id} aria-labelledby={id}>{label}</StyledLabel>
+                <StyledInput id={id} type={type} placeholder={placeholder} aria-placeholder={placeholder}
+                              aria-required="true" role="textbox"/>
+                <StyledSpan role="generic" aria-label="input-required">input required</StyledSpan>
             </StyledDiv>
         );
     };
@@ -23,7 +24,6 @@ const StyledInput= styled.input`
   color: ${MyTheme.colors.primaryText};
   font-family: Montserrat, sans-serif;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   text-indent: 1em;
   outline: none;
@@ -33,6 +33,7 @@ const StyledInput= styled.input`
   }
 
   &:focus-visible {
+    outline: 1px solid var(--gradient, #00F5A0);
     border: 1px solid var(--gradient, #00F5A0);
   }
 
@@ -40,9 +41,7 @@ const StyledInput= styled.input`
     color: #919B9B;
     font-family: Montserrat, sans-serif;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
   }
 
 `
@@ -54,18 +53,14 @@ const StyledSpan=styled.span`
   text-align: center;
   font-family: Montserrat, sans-serif;
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
   align-content: center;
 `
 export const StyledLabel = styled.label`
   color: ${MyTheme.colors.primaryText};
   font-family: Montserrat,sans-serif;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
   position:absolute;
   top:-20px;
   left:0;

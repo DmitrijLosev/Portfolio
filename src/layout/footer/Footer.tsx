@@ -10,10 +10,11 @@ export const Footer = () => {
     return (
         <StyledFooter id="Contact">
             <MainContainer>
-                    <FlexWrapper direction="column" align="center" justify="center">
-                        <SocialList>
-                            <SocialItem>
-                                <SocialNetworkLink href="mailto:elk8143228@gmail.com" target="_blank">
+                <FlexWrapper direction="column" align="center" justify="center">
+                    <nav role="navigation">
+                        <SocialList role="menu" aria-label="menu">
+                            <SocialItem role={"menuitem"} aria-label="SocialMedia1">
+                                <SocialNetworkLink role="link" aria-label="GmAil" href="mailto:elk8143228@gmail.com" target="_blank">
                                     <svg id="gmail" width="38px" height="38px">
                                         <g id="navGmail">
                                             <circle cx="19.2479" cy="18.8683" r="18.8683"
@@ -39,8 +40,10 @@ export const Footer = () => {
                                     </svg>
                                 </SocialNetworkLink>
                             </SocialItem>
-                            <SocialItem>
-                                <SocialNetworkLink href="https://www.linkedin.com/in/dmitrij-losev-9b8121277" target="_blank">
+                            <SocialItem role={"menuitem"} aria-label="SocialMedia2">
+                                <SocialNetworkLink role="link" aria-label="LinkenId"
+                                                   href="https://www.linkedin.com/in/dmitrij-losev-9b8121277"
+                                                   target="_blank">
                                     <svg id="linked" width="38px" height="38px">
                                         <g id="navLinked">
                                             <ellipse cx="19.3519" cy="18.868" rx="18.8683" ry="18.8683"
@@ -60,20 +63,20 @@ export const Footer = () => {
                                     </svg>
                                 </SocialNetworkLink>
                             </SocialItem>
-                            <SocialItem>
-                                <SocialNetworkLink href="https://www.github.com/DmitrijLosev" target="_blank">
-                                    <svg id="git" width="38px" height="38px" >
+                            <SocialItem role={"menuitem"} aria-label="SocialMedia3">
+                                <SocialNetworkLink role="link" aria-label="github" href="https://www.github.com/DmitrijLosev" target="_blank">
+                                    <svg id="git" width="38px" height="38px">
                                         <g id="navGithub">
                                             <circle cx="19.2142" cy="18.8683" r="18.8683" fill="#1F2626"/>
                                             <g clipPath="url(#clip0_1_3000)">
                                                 <path fillRule="evenodd" clipRule="evenodd"
                                                       d="M19.2142 0C8.78949 0 0.345947 8.44354 0.345947 18.8682C0.345947 27.2175 5.74698 34.2695 13.2471 36.7695C14.1905 36.9346 14.5443 36.3686 14.5443 35.8733C14.5443 35.4251 14.5207 33.9393 14.5207 32.3591C9.78007 33.2317 8.55364 31.2034 8.17627 30.142C7.964 29.5996 7.04418 27.925 6.24228 27.4769C5.58189 27.1231 4.63847 26.2505 6.21869 26.2269C7.70457 26.2033 8.7659 27.5948 9.11968 28.1609C10.8178 31.0147 13.5301 30.2128 14.6151 29.7175C14.7802 28.4911 15.2755 27.6656 15.8179 27.1939C11.6197 26.7222 7.23286 25.0948 7.23286 17.8777C7.23286 15.8257 7.964 14.1276 9.16685 12.8068C8.97817 12.3351 8.31778 10.4011 9.35554 7.80674C9.35554 7.80674 10.9358 7.31145 14.5443 9.74073C16.0538 9.3162 17.6576 9.10393 19.2614 9.10393C20.8652 9.10393 22.469 9.3162 23.9784 9.74073C27.587 7.28786 29.1672 7.80674 29.1672 7.80674C30.205 10.4011 29.5446 12.3351 29.3559 12.8068C30.5587 14.1276 31.2899 15.8022 31.2899 17.8777C31.2899 25.1184 26.8794 26.7222 22.6812 27.1939C23.3652 27.7835 23.9548 28.9156 23.9548 30.6845C23.9548 33.2081 23.9313 35.2365 23.9313 35.8733C23.9313 36.3686 24.285 36.9582 25.2285 36.7695C28.9741 35.5049 32.2289 33.0976 34.5347 29.8863C36.8405 26.6751 38.0813 22.8216 38.0825 18.8682C38.0825 8.44354 29.6389 0 19.2142 0Z"
-                                                      fill="url(#paint0_linear_1_3000)" />
+                                                      fill="url(#paint0_linear_1_3000)"/>
                                             </g>
                                             <defs>
                                                 <linearGradient id="paint0_linear_1_3000" x1="0.345947" y1="18.4028"
                                                                 x2="38.0825"
-                                                                y2="18.4028" gradientUnits="userSpaceOnUse" >
+                                                                y2="18.4028" gradientUnits="userSpaceOnUse">
                                                     <stop stopColor="#00F5A0"/>
                                                     <stop offset="1" stopColor="#00D9F5"/>
                                                 </linearGradient>
@@ -87,11 +90,12 @@ export const Footer = () => {
                                 </SocialNetworkLink>
                             </SocialItem>
                         </SocialList>
-                        <Menu menuItems={menuItems}/>
-                        <Copyright>
-                            © 2023 Dzmitry Loseu, All Rights Reserved.
-                        </Copyright>
-                    </FlexWrapper>
+                    </nav>
+                    <Menu menuItems={menuItems}/>
+                    <Copyright>
+                        © 2023 Dzmitry Loseu, All Rights Reserved.
+                    </Copyright>
+                </FlexWrapper>
             </MainContainer>
         </StyledFooter>
     );
@@ -128,7 +132,7 @@ const SocialList = styled.ul`
   display: flex;
   gap: 100px;
   list-style: none;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 `
 const SocialItem = styled.li`
 
@@ -137,7 +141,9 @@ const SocialItem = styled.li`
 const SocialNetworkLink = styled.a`
   &:hover svg[id="gmail"] circle {
     fill: ${MyTheme.colors.primaryText}
+    
   }
+
   &:hover svg[id="gmail"] path {
     fill: ${MyTheme.colors.primaryBgc}
   }
@@ -145,18 +151,23 @@ const SocialNetworkLink = styled.a`
   &:hover svg[id="linked"] ellipse {
     fill: ${MyTheme.colors.primaryText}
   }
+
   &:hover svg[id="linked"] path {
     fill: ${MyTheme.colors.primaryBgc}
   }
+
   &:hover svg[id="git"] path {
     fill: ${MyTheme.colors.primaryText}
   }
+
   &:hover svg[id="git"] circle {
     fill: ${MyTheme.colors.primaryBgc}
   }
-  &:hover svg{
-    transform:translateY(3px);
+
+  &:hover svg {
+    transform: translateY(3px);
   }
+  
 `
 
 const Copyright = styled.small`

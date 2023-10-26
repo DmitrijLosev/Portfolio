@@ -7,10 +7,10 @@ import {MainContainer} from "../../../components/MainContainer";
 
 export const Skills = () => {
     return (
-        <StyledSkillSection id="Skills">
+        <StyledSkillSection role="region" aria-label="skills" id="Skills">
             <MainContainer>
                 <FlexWrapper id="skillwrapper" wrap="wrap" justify="center">
-                <StyledSectionTitle>Skills</StyledSectionTitle>
+                <StyledSectionTitle role="heading" aria-level={2}>Skills</StyledSectionTitle>
                     <Skill iconId="htmlSkill" skillItem="HTML" skillProgress={85}/>
                     <Skill iconId="cssSkill" skillItem="CSS" skillProgress={55}/>
                     <Skill iconId="jsSkill" skillItem="JAVASCRIPT" skillProgress={45}/>

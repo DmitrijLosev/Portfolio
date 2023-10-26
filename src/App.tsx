@@ -7,15 +7,16 @@ import {Projects} from "./layout/sections/projects/Projects";
 import {Footer} from "./layout/footer/Footer";
 
 
-
 function App() {
     return (
-        <div className="App">
+        <div>
             <Header/>
-            <Main/>
-            <AboutMe/>
-            <Skills/>
-            <Projects/>
+            <main>
+                <Main/>
+                <AboutMe/>
+                <Skills/>
+                <Projects/>
+            </main>
             <Footer/>
         </div>
     );

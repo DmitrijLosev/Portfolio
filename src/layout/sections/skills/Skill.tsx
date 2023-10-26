@@ -15,9 +15,8 @@ export const Skill: React.FC<SkillPropsType> = (props) => {
     return (
         <StyledSkillBox>
             <Icon iconId={props.iconId} width="120" height="120" viewBox={props.viewBox || "0 0 120 120"}/>
-            <StyledSkillTitle>{props.skillItem}</StyledSkillTitle>
-            <StyledLabel htmlFor={props.skillItem} hidden>{props.skillItem}</StyledLabel>
-            <ProgressBarWrapper>
+            <StyledSkillTitle role="heading" aria-level={3}>{props.skillItem}</StyledSkillTitle>
+            <ProgressBarWrapper role="generic" aria-label="progressbar">
                 <ProgressBar
                     radius={50}
                     progress={props.skillProgress}
@@ -29,7 +28,7 @@ export const Skill: React.FC<SkillPropsType> = (props) => {
                     cut={120}
                     rotate={-210}
                 > </ProgressBar>
-                <ProgressSpan>{props.skillProgress}%</ProgressSpan>
+                <ProgressSpan role="generic" aria-label="progress-value">{props.skillProgress}%</ProgressSpan>
             </ProgressBarWrapper>
         </StyledSkillBox>
     );
@@ -40,24 +39,24 @@ const StyledSkillTitle = styled.h3`
   color: ${MyTheme.colors.primaryText}
   font-family: Montserrat, sans-serif;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
+  
 `
 const ProgressBarWrapper=styled.div`
 position:relative;
 `
 const ProgressSpan = styled(StyledSpan)`
-font-weight: 600;
-  font-size:1.2em;
-  position:absolute;
-  bottom:60px;
-  right:30px;
+  font-weight: 600;
+  font-size: 1.2em;
+  position: absolute;
+  bottom: 60px;
+  right: 30px;
   background-image: none;
-  color:${MyTheme.colors.primaryText}
+  color: ${MyTheme.colors.primaryText};
+  text-shadow: 3px 3px 5px #00F5A0;
 `
 const StyledSkillBox = styled.div`
   min-width: 15%;
@@ -66,7 +65,7 @@ const StyledSkillBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-`
-const StyledLabel = styled.label`
-
+  svg {
+    filter:drop-shadow(5px 5px 5px #00F5A0);
+  }
 `
