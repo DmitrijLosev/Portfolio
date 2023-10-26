@@ -3,7 +3,6 @@ import {StyledSectionTitle} from "../../../components/StyledSectionTitle";
 import {StyledText} from "../../../components/StyledText";
 import styled from "styled-components";
 import {MainContainer} from "../../../components/MainContainer";
-import {FlexWrapper} from "../../../components/FlexWrapper";
 
 
 export const AboutMe = () => {
