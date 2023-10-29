@@ -7,14 +7,14 @@ export const InputField:React.FC<{type:"text" | "email", placeholder:string, lab
         return (
             <StyledDiv>
                 <StyledLabel htmlFor={id} aria-labelledby={id}>{label}</StyledLabel>
-                <StyledInput id={id} type={type} placeholder={placeholder} aria-placeholder={placeholder}
+                <Field id={id} type={type} placeholder={placeholder} aria-placeholder={placeholder}
                               aria-required="true" role="textbox"/>
                 <StyledSpan role="generic" aria-label="input-required">input required</StyledSpan>
             </StyledDiv>
         );
     };
 
-const StyledInput= styled.input`
+const Field= styled.input`
   border-radius: 6px;
   margin:0 0 26px 0;
   border: 1px solid ${MyTheme.colors.primaryText};

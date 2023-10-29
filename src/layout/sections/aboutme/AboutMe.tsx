@@ -3,6 +3,7 @@ import {StyledSectionTitle} from "../../../components/StyledSectionTitle";
 import {StyledText} from "../../../components/StyledText";
 import styled from "styled-components";
 import {MainContainer} from "../../../components/MainContainer";
+import {MyTheme} from "../../../components/styles/MyTheme.styles";
 
 
 export const AboutMe = () => {
@@ -25,16 +26,23 @@ export const AboutMe = () => {
 };
 
 const StyledSection = styled.section`
-  min-height: calc(70vh);
   
   ${StyledSectionTitle}{
-    padding:260px 0 20px;
+    padding:263px 0 20px;
+
+    @media ${MyTheme.media.mobile} {
+      padding:72px 0 20px;
+    }
   }
 
+  ${MainContainer}{
+    padding:0 47px;
+  }
 `
 
 const StyledTextPseudo = styled(StyledText)`
   position: relative;
+  
   
   
   &::before {

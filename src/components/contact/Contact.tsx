@@ -12,9 +12,8 @@ export const Contact = () => {
     return (<>
         <Header/>
             <main>
-        <ContactSection role="region" aria-label="Contact Me">
+                <ContactSection role="region" aria-label="Contact Me">
             <MainContainer>
-                    <MainTittle role="heading" aria-level={1}>CONTACT ME</MainTittle>
                     <StyledForm role="form">
                         <InputField id="name" type="text" placeholder="Enter your name" label="Name"/>
                         <InputField id="email" type="email" placeholder="Enter your e-mail" label="Email"/>
@@ -35,19 +34,15 @@ export const Contact = () => {
 };
 
 const ContactSection= styled.section`
-min-height: 100vh;
-padding:100px 0 0 0;
+  min-height: 100vh;
+  padding: 100px 0 0 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  ${MainTittle} {
-    text-align: center;
-  }
+  align-items: center;
 `
 
 
 const StyledForm = styled.form`
-padding-top:30px;
 display: flex;
 flex-direction: column;
   justify-content: center;
@@ -55,6 +50,7 @@ align-items: center;
 gap: 22px;
   max-width:530px;
   margin:0 auto;
+  padding:30px 0 0 0;
 `
 
 
@@ -68,15 +64,17 @@ padding:12px 20px;
 const StyledTextarea = styled.textarea`
   border-radius: 6px;
   max-width: 530px;
-  width:100%;
+  width: 100%;
   border: 1px solid ${MyTheme.colors.primaryText};
   background-color: transparent;
   color: ${MyTheme.colors.primaryText};
-  font-family: Montserrat,sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 16px;
   font-weight: 500;
   outline: none;
-  padding:15px 18px;
+  padding: 15px 18px;
+  resize: unset;
+  height: 165px;
 
   &:focus-visible {
     outline: 1px solid var(--gradient, #00F5A0);

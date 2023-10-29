@@ -41,8 +41,5 @@ export const GlobalStyles=createGlobalStyle`
 @media (prefers-reduced-motion: reduce) {
   animation:unset;
 }
-
-
-
-
+  
 `

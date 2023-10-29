@@ -2,10 +2,11 @@ import styled, {css} from "styled-components";
 import {HashLink as NavLink} from "react-router-hash-link";
 import {MyTheme} from "./styles/MyTheme.styles";
 
-export const StyledNavLink = styled(NavLink)<{ type?: 'colored' }>`
+export const StyledNavLink = styled(NavLink)<{ type?: 'colored',
+  fontSize?:string, fontWeight?:string }>`
   color: ${MyTheme.colors.primaryText};
-  font-size: 16px;
-  font-weight: 500;
+  font-size: ${props=>props.fontSize || "16px"};
+  font-weight: ${props=>props.fontWeight || "500"};
 
 
   ${props => props.type === "colored" && css<{ type?: 'colored' }>`

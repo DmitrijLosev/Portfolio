@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
-import {Menu} from "../../components/menu/Menu";
+import {HeaderMenu} from "../../components/menu/HeaderMenu";
 import {MainContainer} from "../../components/MainContainer";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {MyTheme} from "../../components/styles/MyTheme.styles";
+import {MobileMenu} from "../../components/menu/MobileMenu";
 
 const menuItems = ["About me", "Skills", "Projects", "Contact"]
+const menuPopUpItems=["Home",...menuItems]
 export const Header = () => {
     return (
         <StyledHeader role="banner">
             <MainContainer>
                 <FlexWrapper justify="space-between" align="center" wrap="wrap">
                     <Logo/>
-                    <Menu menuItems={menuItems}/>
+                    <HeaderMenu menuItems={menuItems}/>
+                    <MobileMenu menuItems={menuPopUpItems}/>
                 </FlexWrapper>
             </MainContainer>
         </StyledHeader>

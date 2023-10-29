@@ -14,11 +14,11 @@ type SkillPropsType = {
 export const Skill: React.FC<SkillPropsType> = (props) => {
     return (
         <StyledSkillBox>
-            <Icon iconId={props.iconId} width="120" height="120" viewBox={props.viewBox || "0 0 120 120"}/>
+            <Icon iconId={props.iconId} width="120px" height="120px" viewBox={props.viewBox || "0 0 120 120"}/>
             <StyledSkillTitle role="heading" aria-level={3}>{props.skillItem}</StyledSkillTitle>
             <ProgressBarWrapper role="generic" aria-label="progressbar">
                 <ProgressBar
-                    radius={50}
+                    radius={40}
                     progress={props.skillProgress}
                     strokeWidth={15}
                     strokeColor="#00D9F5"
@@ -36,6 +36,7 @@ export const Skill: React.FC<SkillPropsType> = (props) => {
 
 
 const StyledSkillTitle = styled.h3`
+  color: ${MyTheme.colors.primaryText}
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 2px;
@@ -50,19 +51,18 @@ const ProgressSpan = styled(StyledSpan)`
   font-weight: 600;
   font-size: 1.2em;
   position: absolute;
-  bottom: 60px;
-  right: 30px;
+  bottom: 50px;
+  right: 18px;
   background-image: none;
   color: ${MyTheme.colors.primaryText};
   text-shadow: 3px 3px 5px #00F5A0;
 `
 const StyledSkillBox = styled.div`
-  min-width: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   svg {
     filter:drop-shadow(5px 5px 5px #00F5A0);
   }

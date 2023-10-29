@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../components/FlexWrapper";
-import {Menu} from "../../components/menu/Menu";
+import {HeaderMenu} from "../../components/menu/HeaderMenu";
 import {MainContainer} from "../../components/MainContainer";
 import {MyTheme} from "../../components/styles/MyTheme.styles";
+import {FooterMenu} from "../../components/menu/FooterMunu";
 
 const menuItems = ["Projects", "Contact Me"]
 export const Footer = () => {
@@ -93,7 +94,7 @@ export const Footer = () => {
                             </SocialItem>
                         </SocialList>
                     </nav>
-                    <Menu menuItems={menuItems}/>
+                    <FooterMenu menuItems={menuItems} fontSize="14px" fontWeight="400"/>
                     <Copyright>
                         © 2023 Dzmitry Loseu, All Rights Reserved.
                     </Copyright>
@@ -105,22 +106,19 @@ export const Footer = () => {
 
 
 const StyledFooter = styled.footer`
-  min-height: 70vh;
   display: flex;
   align-items: end;
   justify-content: center;
-  padding: 0 0 100px 0;
+  padding: 280px 0 92px 0;
 
   ${FlexWrapper} {
-    gap: 50px;
-    max-width: 320px;
-    margin:0 auto;
+    gap: 49px;
   }
 
   ul[id="linkMenu"] {
-    gap: 25px;
+    gap: 48px;
     
-
+  
     li {
       &:active, &:hover {
         &::before {
@@ -180,4 +178,5 @@ const SocialNetworkLink = styled.a`
 `
 
 const Copyright = styled.small`
+    opacity: 0.5;
 `
