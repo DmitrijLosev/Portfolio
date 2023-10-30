@@ -18,8 +18,7 @@ export const GlobalStyles=createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: ${MyTheme.colors.primaryText};
-    background-color: ${MyTheme.colors.primaryBgc}
-    
+    background-color: ${MyTheme.colors.primaryBgc};
     min-width:414px;
   }
 
