@@ -44,9 +44,14 @@ const StyledSkillSection = styled.section`
   }
   
   ${FlexWrapper}[id="skillwrapper"]{
-    gap: 120px;
-    flex:1 1 120px;
+    row-gap: 60px;
+    column-gap: 120px;
+   flex-grow: 1;
     max-width: 1080px;
-    width:100%
+    width:100%;
+    @media ${MyTheme.media.tablet} {
+      row-gap: 80px;
+      column-gap: 47px;
+    }
   }
 `

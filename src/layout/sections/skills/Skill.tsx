@@ -4,6 +4,7 @@ import {Icon} from "../../../components/icon/Icon";
 import {MyTheme} from "../../../components/styles/MyTheme.styles";
 import ProgressBar from "react-customizable-progressbar"
 import {StyledSpan} from "../projects/Project";
+import {font} from "../../../components/styles/Commons";
 
 type SkillPropsType = {
     iconId: string;
@@ -36,16 +37,19 @@ export const Skill: React.FC<SkillPropsType> = (props) => {
 
 
 const StyledSkillTitle = styled.h3`
-  color: ${MyTheme.colors.primaryText}
   font-size: 16px;
-  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
-  
+  ${font({Fmin:12,Fmax:16 })}
 `
 const ProgressBarWrapper=styled.div`
 position:relative;
+  @media ${MyTheme.media.tablet} {
+    width: 90px;
+    height: 90px;
+  }
+  
 `
 const ProgressSpan = styled(StyledSpan)`
   font-weight: 600;
@@ -55,7 +59,12 @@ const ProgressSpan = styled(StyledSpan)`
   right: 18px;
   background-image: none;
   color: ${MyTheme.colors.primaryText};
-  text-shadow: 3px 3px 5px #00F5A0;
+  text-shadow: 3px 3px 5px ${MyTheme.colors.thirdBgc};
+  @media ${MyTheme.media.tablet} {
+    bottom: 30px;
+    right: 7px;
+    font-size: 1em;
+  }
 `
 const StyledSkillBox = styled.div`
   display: flex;
@@ -63,7 +72,19 @@ const StyledSkillBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  svg {
-    filter:drop-shadow(5px 5px 5px #00F5A0);
+  width: 90px;
+  max-width: 120px;
+
+  @media ${MyTheme.media.tablet} {
+    gap:15px;
   }
+  
+  svg {
+    filter:drop-shadow(5px 5px 5px ${MyTheme.colors.thirdBgc});
+    @media ${MyTheme.media.tablet} {
+      width: 90px;
+      height: 90px;
+    }
+  }
+  
 `

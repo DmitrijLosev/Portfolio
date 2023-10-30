@@ -76,9 +76,10 @@ export const Project: React.FC<{ showAllProjects: boolean }> = (props) => {
                         <StyledProjectBox key={projectItem.projectId}>
                             <FlexWrapper id="projectWrapper" direction="column">
                                 <StyledPhotoWrapper>
-                                    <StyledProjectLink role="link" aria-label="LinkToGitHub" href={projectItem.linkOnGitHub}
+                                    <StyledProjectLink id="projectLink" role="link" aria-label="LinkToGitHub"
+                                                       href={projectItem.linkOnGitHub}
                                                        target="_blank">Link to GitHub</StyledProjectLink>
-                                    <StyledProjectTitlePhoto aria-label="project-title" role="img"
+                                    <StyledProjectTitlePhoto id="projectTitle" aria-label="project-title" role="img"
                                                              src={projectItem.projectTitlePhoto}
                                                              alt="Project's Tittle photo is here"/>
                                 </StyledPhotoWrapper>
@@ -98,9 +99,10 @@ export const Project: React.FC<{ showAllProjects: boolean }> = (props) => {
                         <StyledProjectBox key={projectItem.projectId}>
                             <FlexWrapper id="projectWrapper" direction="column">
                                 <StyledPhotoWrapper>
-                                    <StyledProjectLink role="link" aria-label="LinkToGitHub" href={projectItem.linkOnGitHub}
+                                    <StyledProjectLink id="projectLink" role="link" aria-label="LinkToGitHub"
+                                                       href={projectItem.linkOnGitHub}
                                                        target="_blank">Link to GitHub</StyledProjectLink>
-                                    <StyledProjectTitlePhoto aria-label="project-title" role="img"
+                                    <StyledProjectTitlePhoto id="projectTitle" aria-label="project-title" role="img"
                                                              src={projectItem.projectTitlePhoto}
                                                              alt="Project's Tittle photo is here"/>
                                 </StyledPhotoWrapper>
@@ -123,36 +125,49 @@ export const Project: React.FC<{ showAllProjects: boolean }> = (props) => {
 }
 
 const StyledProjectBox = styled.div`
-  max-width: 500px;
-  width: 100%;
+  width: 363px;
+  flex-grow: 1;
+  
+
 
   ${FlexWrapper}[id="skillsSpans"] {
     height: auto;
     gap: 12px;
-    max-width: 475px;
-    padding: 10px 0 0 25px;
+    padding: 11px 0 0 26px;
+    @media ${MyTheme.media.mobile} {
+      padding: 11px 7px 0 18px;
+    }
   }
 
   ${FlexWrapper}[id="projectWrapper"] {
     border-radius: 6px;
-    background-color: #222525;
+    background-color: ${MyTheme.colors.secondaryBgc};
+  }
+
+  @media ${MyTheme.media.desktop} {
+    max-width: 522px;
   }
 `
 const StyledProjectTitle = styled.h3`
   color: #D9F2F2;
   font-size: 20px;
   font-weight: 600;
-  padding-left: 25px;
+  padding: 29px 0 0 26px;
   max-width: 450px;
-  padding-top: 30px;
+  @media ${MyTheme.media.mobile} {
+    padding: 16px 0 0 18px;
+  }
+
 `
 
 const StyledProjectTitlePhoto = styled.img`
   width: 100%;
-  max-width: 500px;
   object-fit: cover;
+  aspect-ratio: 100 / 81;
+  max-height: 388px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  display: block;
 
 `
 export const StyledSpan = styled.span`
@@ -176,8 +191,12 @@ const StyledProjectText = styled(StyledText)`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.64px;
-  max-width: 500px;
-  padding: 20px 25px 30px 25px
+  font-weight: 400;
+  padding: 19px 9px 32px 26px;
+  @media ${MyTheme.media.mobile} {
+    padding: 16px 7px 19px 18px;
+  }
+
 `
 
 const StyledPhotoWrapper = styled.div`
@@ -196,7 +215,18 @@ const StyledPhotoWrapper = styled.div`
     opacity: 0.5;
     transition: .2s;
   }
- 
+  
+  @media ${MyTheme.media.tablet} {
+    a {
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%)
+    }
+    img {
+      transform: skew(30deg);
+      opacity: 0.5;
+    }
+  }
 `
 const StyledProjectLink = styled.a`
   position: absolute;
@@ -210,17 +240,22 @@ const StyledProjectLink = styled.a`
   color: ${MyTheme.colors.secondaryText};
   z-index: 1;
   font-weight: 600;
-  &:focus-visible {
-    outline:none;
-    border:3px solid ${MyTheme.colors.primaryText};
-  }
 
-  &:hover {
-    background-image: unset;
-    background-color: ${MyTheme.colors.primaryText};
-    color: ${MyTheme.colors.primaryBgc};
-    transform: translateY(3px);
+  &:focus-visible {
+    outline: none;
+    border: 3px solid ${MyTheme.colors.primaryText};
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
   }
+}
+
+&:hover {
+  background-image: unset;
+  background-color: ${MyTheme.colors.primaryText};
+  color: ${MyTheme.colors.primaryBgc};
+  transform: translateY(3px);
+}
 
 `
 
