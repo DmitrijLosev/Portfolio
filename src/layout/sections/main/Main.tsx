@@ -26,7 +26,7 @@ export const Main = () => {
                               viewBox="0 0 32 32"/></ArrowLink>
                     <FlexWrapper id="textFlexWrapper" direction="column" justify="center" align="start" wrap="wrap">
                         <MainTittle role="heading" aria-level={1}>WEB DEVELOPER</MainTittle>
-                        <Name role="heading" aria-level={2}>Erica Font</Name>
+                        <Name role="heading" aria-level={2}>Dzmity Loseu</Name>
                         <StyledMainText role="paragraph" aria-label="MainInformation">Amet minim mollit non deserunt
                             ullamco est sit aliqua dolor do amet sint. Velit
                             officia consequat duis enim velit mollit. Exercitation veniam consequat
