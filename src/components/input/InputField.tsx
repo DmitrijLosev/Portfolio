@@ -31,14 +31,15 @@ const Field= styled.input`
   }
 
   &:focus-visible {
-    outline: 1px solid var(--gradient, #00F5A0);
-    border: 1px solid var(--gradient, #00F5A0);
+    outline: 1px solid var(--gradient, ${MyTheme.colors.thirdBgc});
+    border: 1px solid var(--gradient, ${MyTheme.colors.thirdBgc});
   }
 
-  input::placeholder {
-    color: #919B9B;
+  &::placeholder {
+    color: ${MyTheme.colors.placeholderColor};
     font-size: 14px;
     font-weight: 400;
+    text-transform: capitalize;
   }
 
 `

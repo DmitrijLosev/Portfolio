@@ -31,7 +31,7 @@ const StyledSection = styled.section`
     padding:263px 0 20px;
 
     @media ${MyTheme.media.mobile} {
-      padding:72px 0 20px;
+      padding:144px 0 20px;
     }
   }
 

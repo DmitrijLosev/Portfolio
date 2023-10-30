@@ -74,6 +74,7 @@ const StyledSkillBox = styled.div`
   gap: 20px;
   width: 90px;
   max-width: 120px;
+  flex-grow: 1;
 
   @media ${MyTheme.media.tablet} {
     gap:15px;

@@ -4,7 +4,8 @@ export const MyTheme = {
         secondaryBgc: "#222525",
         thirdBgc: "#00F5A0",
         primaryText:"#BDEBEA",
-        secondaryText:"#252728"
+        secondaryText:"#252728",
+        placeholderColor: "#919B9B"
     },
     media:{
         tablet:"screen and (max-width: 768px)",

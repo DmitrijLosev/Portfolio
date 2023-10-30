@@ -39,7 +39,7 @@ const StyledSkillSection = styled.section`
     width: 100%;
     align-self:flex-end;
     @media ${MyTheme.media.mobile} {
-      padding: 85px 0 46px 0;
+      padding: 130px 0 46px 0;
     }
   }
   

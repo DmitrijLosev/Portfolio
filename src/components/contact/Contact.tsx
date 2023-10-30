@@ -1,6 +1,5 @@
 import React from 'react';
 import {Header} from "../../layout/header/Header";
-import {MainTittle} from "../../layout/sections/main/Main";
 import styled from "styled-components";
 import {StyledBtn} from "../StyledButton";
 import {MainContainer} from "../MainContainer";
@@ -10,56 +9,59 @@ import {MyTheme} from "../styles/MyTheme.styles";
 
 export const Contact = () => {
     return (<>
-        <Header/>
+            <Header/>
             <main>
                 <ContactSection role="region" aria-label="Contact Me">
-            <MainContainer>
-                    <StyledForm role="form">
-                        <InputField id="name" type="text" placeholder="Enter your name" label="Name"/>
-                        <InputField id="email" type="email" placeholder="Enter your e-mail" label="Email"/>
-                        <StyledPositionDiv>
-                            <StyledTextarea id="message" placeholder="Enter your message"
-                                            aria-placeholder="Enter your message" aria-required="true">
-                            </StyledTextarea>
-                            <StyledLabel htmlFor="message" aria-labelledby="message" >Message</StyledLabel>
+                    <MainContainer>
+                        <StyledForm role="form">
+                            <InputField id="name" type="text" placeholder="enter your name" label="Name"/>
+                            <InputField id="email" type="email" placeholder="enter your e-mail" label="Email"/>
+                            <StyledPositionDiv>
+                                <StyledTextarea id="message" placeholder="enter your message"
+                                                aria-placeholder="Enter your message" aria-required="true">
+                                </StyledTextarea>
+                                <StyledLabel htmlFor="message" aria-labelledby="message">Message</StyledLabel>
                             </StyledPositionDiv>
-                                <StyledContactBtn role="button" aria-label="send form" type="submit">Submit</StyledContactBtn>
-                    </StyledForm>
-            </MainContainer>
-        </ContactSection>
+                            <StyledContactBtn role="button" aria-label="send form"
+                                              type="submit">Submit</StyledContactBtn>
+                        </StyledForm>
+                    </MainContainer>
+                </ContactSection>
             </main>
-    </>
-)
-;
+        </>
+    )
+        ;
 };
 
-const ContactSection= styled.section`
+const ContactSection = styled.section`
   min-height: 100vh;
   padding: 100px 0 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  ${MainContainer} {
+    padding:0 25px;
+  }
 `
 
 
 const StyledForm = styled.form`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-align-items: center;
-gap: 22px;
-  max-width:530px;
-  margin:0 auto;
-  padding:30px 0 0 0;
+  align-items: center;
+  gap: 22px;
+  max-width: 530px;
+  margin: 0 auto;
+  padding: 0 0 30px 0;
 `
 
 
-
-const StyledContactBtn =styled(StyledBtn)`
-height: 50px;
-padding:12px 20px;
+const StyledContactBtn = styled(StyledBtn)`
+  height: 50px;
+  padding: 12px 20px;
   width: 100%;
-  
+
 `
 const StyledTextarea = styled.textarea`
   border-radius: 6px;
@@ -77,10 +79,17 @@ const StyledTextarea = styled.textarea`
   height: 165px;
 
   &:focus-visible {
-    outline: 1px solid var(--gradient, #00F5A0);
+    outline: 1px solid var(--gradient, ${MyTheme.colors.thirdBgc});
+    border: 1px solid var(--gradient, ${MyTheme.colors.thirdBgc});
+  }
+  &::placeholder {
+    color: ${MyTheme.colors.placeholderColor};
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
   }
 `
-const StyledPositionDiv=styled.div`
-  position:relative;
+const StyledPositionDiv = styled.div`
+  position: relative;
   width: 100%;
 `

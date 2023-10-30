@@ -45,7 +45,7 @@ const StyledProjectsSection = styled.section`
     width: 100%;
     align-self: flex-end;
     @media ${MyTheme.media.mobile} {
-      padding:72px 0 0 0;
+      padding:144px 0 0 0;
     }
   }
 

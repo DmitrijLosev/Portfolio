@@ -2,6 +2,9 @@ import {createGlobalStyle} from "styled-components";
 import {MyTheme} from "./MyTheme.styles";
 
 export const GlobalStyles=createGlobalStyle`
+
+
+  
   *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -17,8 +20,6 @@ export const GlobalStyles=createGlobalStyle`
     color: ${MyTheme.colors.primaryText};
     background-color: ${MyTheme.colors.primaryBgc}
   }
-
-  ;
 
   a {
     text-decoration: none;

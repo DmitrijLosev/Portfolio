@@ -133,7 +133,7 @@ const StyledProjectBox = styled.div`
   ${FlexWrapper}[id="skillsSpans"] {
     height: auto;
     gap: 12px;
-    padding: 11px 0 0 26px;
+    padding: 11px 10px 0 26px;
     @media ${MyTheme.media.mobile} {
       padding: 11px 7px 0 18px;
     }
