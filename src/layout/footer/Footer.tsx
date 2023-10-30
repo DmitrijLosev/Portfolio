@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../components/FlexWrapper";
-import {HeaderMenu} from "../../components/menu/HeaderMenu";
 import {MainContainer} from "../../components/MainContainer";
 import {MyTheme} from "../../components/styles/MyTheme.styles";
 import {FooterMenu} from "../../components/menu/FooterMunu";
