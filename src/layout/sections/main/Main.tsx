@@ -109,12 +109,14 @@ const StyledPhoto = styled.img`
   width: 100%;
   height: 332px;
   object-fit: cover;
+  
   object-position: center;
   display: block;
 
   @media ${MyTheme.media.mobile} {
     width: 300px;
     height: 220px;
+   
   }
 `
 
