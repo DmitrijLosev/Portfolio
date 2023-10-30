@@ -38,6 +38,8 @@ const StyledMenu = styled.nav`
       display: none;
     }
 
+  li:nth-of-type(4) {
+    padding-right:40px;
 
     li:nth-of-type(-n+3) {
       position: relative;

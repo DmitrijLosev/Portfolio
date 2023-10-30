@@ -111,7 +111,7 @@ const StyledFooter = styled.footer`
   display: flex;
   align-items: end;
   justify-content: center;
-  padding: 190px 0 92px 0;
+  padding: 280px 0 92px 0;
   @media ${MyTheme.media.mobile} {
     padding: 100px 0 72px 0;
   }

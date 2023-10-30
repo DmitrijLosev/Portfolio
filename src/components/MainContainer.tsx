@@ -7,7 +7,7 @@ export const MainContainer=styled.div`
   width: 100%;
   height: 100%;
   margin:0 auto;
-  padding:0 25px 0 60px;
+  padding:0 25px 0 67px;
   @media ${MyTheme.media.mobile} {
     padding:0 25px;
   }

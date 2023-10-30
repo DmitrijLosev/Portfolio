@@ -36,9 +36,9 @@ const StyledSection = styled.section`
   }
 
   ${MainContainer}{
-    padding:0 77px;
+    padding:0 90px;
     @media ${MyTheme.media.mobile} {
-      padding:0 47px 0 47px;
+      padding:0 47px;
     }
   }
 `

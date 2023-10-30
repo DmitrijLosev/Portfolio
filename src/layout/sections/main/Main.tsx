@@ -26,7 +26,7 @@ export const Main = () => {
                               viewBox="0 0 32 32"/></ArrowLink>
                     <FlexWrapper id="textFlexWrapper" direction="column" justify="center" align="start" wrap="wrap">
                         <MainTittle role="heading" aria-level={1}>WEB DEVELOPER</MainTittle>
-                        <Name role="heading" aria-level={2}>Dzmitry Loseu</Name>
+                        <Name role="heading" aria-level={2}>Erica Font</Name>
                         <StyledMainText role="paragraph" aria-label="MainInformation">Amet minim mollit non deserunt
                             ullamco est sit aliqua dolor do amet sint. Velit
                             officia consequat duis enim velit mollit. Exercitation veniam consequat
@@ -47,26 +47,24 @@ export const Main = () => {
 };
 
 const StyledMain = styled.section`
-  padding: 260px 0 0 0;
+  padding: 260px 0 132px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-
   @media ${MyTheme.media.mobile} {
-    padding: 128px 0 0 0;
+    padding: 129px 0 0 0;
   }
 
   ${StyledNavLink} {
     @media not ${MyTheme.media.mobile} {
       margin: 20px 0 0 0;
     }
-
   }
 
   ${FlexWrapper}[id="MainSectionFlexWrapper"] {
-    row-gap: 63px;
-    @media screen and (max-width: 1042px) {
+    row-gap: 81px;
+    @media screen and (max-width: 1059px) {
       justify-content: center;
     }
     @media ${MyTheme.media.mobile} {
@@ -90,6 +88,7 @@ const ArrowLink = styled.a`
   position: absolute;
   bottom: 0;
   right: 50%;
+  transform: translate(50%);
   z-index:1;
 
   @media ${MyTheme.media.mobile} {
@@ -99,7 +98,7 @@ const ArrowLink = styled.a`
 
   &:hover svg {
     transform: scale(2) translateY(-10px);
-    stroke: #00F5A0;
+    stroke: ${MyTheme.colors.thirdBgc};
     transition: .2s;
   }
 `
@@ -121,18 +120,19 @@ const StyledPhoto = styled.img`
 `
 
 export const MainTittle = styled.h1`
-  ${font({family: "Tinos, sans-serif", color: "#D7E5EC", Fmax: 20, Fmin: 16})}
-
+  padding-left:6px;
+  ${font({family: "Tinos, sans-serif", color: "#D7E5EC", Fmax: 20, Fmin: 16})};
+  
 `
 const Name = styled.h2`
   background-image: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
   text-shadow: 3px 3px 10px aqua;
-  ${font({weight: 600, color: "transparent", Fmax: 72, Fmin: 40})} @media ${MyTheme.media.mobile} {
-    text-align: center;
-  }
+  ${font({weight: 600, color:"transparent" , Fmax: 72, Fmin: 40})} 
+  
 `
 const PseudoDiv = styled.div`
   position: relative;
