@@ -1,34 +1,17 @@
 import React from 'react';
 import {Icon} from "../icon/Icon";
-import styled from "styled-components";
 import {FlexWrapper} from "../FlexWrapper";
-import {StyledNavLink} from "../StyledNavLink";
+import {S} from "./Logo_Styles";
 
 
-export const Logo = () => {
+export const Logo:React.FC = () => {
     return (
-        <StyledLogoNavLink role="link" aria-label="main section" to="/#">
+        <S.StyledLogoNavLink role="link" aria-label="main section" to="/#">
             <FlexWrapper justify={'center'} align={'center'}>
             <Icon iconId="logo" />
             <span>Home</span>
             </FlexWrapper>
-        </StyledLogoNavLink>
+        </S.StyledLogoNavLink>
     );
 };
 
-    const StyledLogoNavLink=styled(StyledNavLink)`
-    ${FlexWrapper} {
-      gap:10px
-    }
-      &:hover {
-        transform:scale(1.2);
-        transition: .2s;
-      }
-
-      svg{
-        filter:drop-shadow(5px 5px 5px #00F5A0);
-      }
-      span {
-        text-shadow: 5px 5px 5px #00F5A0;
-      }
-    `

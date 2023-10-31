@@ -1,34 +1,35 @@
 import React from 'react';
-import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
 import {HeaderMenu} from "../../components/menu/HeaderMenu";
 import {MainContainer} from "../../components/MainContainer";
 import {FlexWrapper} from "../../components/FlexWrapper";
-import {MyTheme} from "../../components/styles/MyTheme.styles";
 import {MobileMenu} from "../../components/menu/MobileMenu";
+import {S} from "./Header_Styles"
 
 const menuItems = ["About me", "Skills", "Projects", "Contact"]
 const menuPopUpItems=["Home",...menuItems]
-export const Header = () => {
+export const Header:React.FC = () => {
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 768;
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth)
+        window.addEventListener("resize", handleWindowResize);
+        return () => window.removeEventListener("resize", handleWindowResize);
+    }, []);
+
     return (
-        <StyledHeader role="banner">
+        <S.Header role="banner">
             <MainContainer>
                 <FlexWrapper justify="space-between" align="center" wrap="wrap">
                     <Logo/>
-                    <HeaderMenu menuItems={menuItems}/>
-                    <MobileMenu menuItems={menuPopUpItems}/>
+                    {width > breakpoint ? <HeaderMenu menuItems={menuItems}/>
+                        : <MobileMenu menuItems={menuPopUpItems}/>}
                 </FlexWrapper>
             </MainContainer>
-        </StyledHeader>
+        </S.Header>
 
     );
 };
 
-const StyledHeader = styled.header`
-  background-color: ${MyTheme.colors.primaryBgc};
-  position: fixed;
-  width: 100%;
-  height: 100px;
-  z-index: 9999;
 
-`

@@ -1,13 +1,13 @@
 import React from 'react';
-import styled from "styled-components";
 import {StyledNavLink} from "../StyledNavLink";
+import { S } from './Menu_Styles';
 
 
 export const FooterMenu: React.FC<{ menuItems: string[], fontSize?: string, fontWeight?: string }> = (props) => {
 
 
     return (
-        <StyledMenu role="navigation">
+        <S.FooterMenu role="navigation">
             <ul id="linkMenu" role="menu" aria-label="menu">
                 {props.menuItems.map((item, index) => (
                     <li role={"menuitem"} key={index}>
@@ -29,38 +29,7 @@ export const FooterMenu: React.FC<{ menuItems: string[], fontSize?: string, font
                     </li>
                 ))}
             </ul>
-        </StyledMenu>
+        </S.FooterMenu>
     );
 };
 
-const StyledMenu = styled.nav`
-  ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    list-style: none;
-  }
-
-
-
-    li {
-      position: relative;
-      outline: 2px solid transparent;
-
-      &:hover {
-        &::before {
-          content: "";
-          display: inline-block;
-          background-image: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
-          border-radius: 4px;
-          position: absolute;
-          background-size: cover;
-          height: 11px;
-          width: 100%;
-          bottom: -12px;
-        }
-      }
-    }
-  
-`

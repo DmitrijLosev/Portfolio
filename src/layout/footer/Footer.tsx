@@ -1,21 +1,20 @@
 import React from 'react';
-import styled from "styled-components";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {MainContainer} from "../../components/MainContainer";
-import {MyTheme} from "../../components/styles/MyTheme.styles";
-import {FooterMenu} from "../../components/menu/FooterMunu";
+import {S} from "./Footer_Styles";
+import {FooterMenu} from "../../components/menu/FooterMenu";
 
 const menuItems = ["Projects", "Contact Me"]
-export const Footer = () => {
+export const Footer:React.FC = () => {
     return (
-        <StyledFooter id="Contact">
+        <S.Footer id="Contact">
             <MainContainer>
                 <FlexWrapper direction="column" align="center" justify="center">
                     <nav role="navigation">
-                        <SocialList role="menu" aria-label="menu">
-                            <SocialItem role={"menuitem"} aria-label="SocialMedia1">
-                                <SocialNetworkLink role="link" aria-label="GmAil" href="mailto:elk8143228@gmail.com"
-                                                   target="_blank">
+                        <S.SocialList role="menu" aria-label="menu">
+                            <S.SocialItem role={"menuitem"} aria-label="SocialMedia1">
+                                <S.SocialNetworkLink role="link" aria-label="GmAil" href="mailto:elk8143228@gmail.com"
+                                                     target="_blank">
                                     <svg id="gmail" width="38px" height="38px">
                                         <g id="navGmail">
                                             <circle cx="19.2479" cy="18.8683" r="18.8683"
@@ -39,13 +38,13 @@ export const Footer = () => {
                                             </defs>
                                         </g>
                                     </svg>
-                                    <StyledSocialNetworkTitle>GMAIL</StyledSocialNetworkTitle>
-                                </SocialNetworkLink>
-                            </SocialItem>
-                            <SocialItem role={"menuitem"} aria-label="SocialMedia2">
-                                <SocialNetworkLink role="link" aria-label="LinkenId"
-                                                   href="https://www.linkedin.com/in/dmitrij-losev-9b8121277"
-                                                   target="_blank">
+                                    <S.SocialNetworkTitle>GMAIL</S.SocialNetworkTitle>
+                                </S.SocialNetworkLink>
+                            </S.SocialItem>
+                            <S.SocialItem role={"menuitem"} aria-label="SocialMedia2">
+                                <S.SocialNetworkLink role="link" aria-label="LinkenId"
+                                                     href="https://www.linkedin.com/in/dmitrij-losev-9b8121277"
+                                                     target="_blank">
                                     <svg id="linked" width="38px" height="38px">
                                         <g id="navLinked">
                                             <ellipse cx="19.3519" cy="18.868" rx="18.8683" ry="18.8683"
@@ -63,12 +62,12 @@ export const Footer = () => {
                                             </defs>
                                         </g>
                                     </svg>
-                                    <StyledSocialNetworkTitle>LINKEDIN</StyledSocialNetworkTitle>
-                                </SocialNetworkLink>
-                            </SocialItem>
-                            <SocialItem role={"menuitem"} aria-label="SocialMedia3">
-                                <SocialNetworkLink role="link" aria-label="github"
-                                                   href="https://www.github.com/DmitrijLosev" target="_blank">
+                                    <S.SocialNetworkTitle>LINKEDIN</S.SocialNetworkTitle>
+                                </S.SocialNetworkLink>
+                            </S.SocialItem>
+                            <S.SocialItem role={"menuitem"} aria-label="SocialMedia3">
+                                <S.SocialNetworkLink role="link" aria-label="github"
+                                                     href="https://www.github.com/DmitrijLosev" target="_blank">
                                     <svg id="git" width="38px" height="38px">
                                         <g id="navGithub">
                                             <circle cx="19.2142" cy="18.8683" r="18.8683" fill="#1F2626"/>
@@ -91,110 +90,19 @@ export const Footer = () => {
                                             </defs>
                                         </g>
                                     </svg>
-                                    <StyledSocialNetworkTitle>GITHUB</StyledSocialNetworkTitle>
-                                </SocialNetworkLink>
-                            </SocialItem>
-                        </SocialList>
+                                    <S.SocialNetworkTitle>GITHUB</S.SocialNetworkTitle>
+                                </S.SocialNetworkLink>
+                            </S.SocialItem>
+                        </S.SocialList>
                     </nav>
                     <FooterMenu menuItems={menuItems} fontSize="14px" fontWeight="400"/>
-                    <Copyright>
+                    <S.Copyright>
                         © 2023 Dzmitry Loseu, All Rights Reserved.
-                    </Copyright>
+                    </S.Copyright>
                 </FlexWrapper>
             </MainContainer>
-        </StyledFooter>
+        </S.Footer>
     );
 };
 
 
-const StyledFooter = styled.footer`
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  padding: 280px 0 92px 0;
-  @media ${MyTheme.media.mobile} {
-    padding: 100px 0 72px 0;
-  }
-
-  ${FlexWrapper} {
-    gap: 49px;
-  }
-
-  ul[id="linkMenu"] {
-    gap: 48px;
-    
-  
-    li {
-      &:active, &:hover {
-        &::before {
-          width: 100%;
-          bottom: -12px;
-        }
-      }
-    }
-  }
-}
-
-
-`
-const SocialList = styled.ul`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 73px;
-  list-style: none;
-  flex-wrap: wrap;
- 
-`
-const SocialItem = styled.li`
-    text-align: center;
-`
-
-const SocialNetworkLink = styled.a`
-  
-  
-  &:hover svg[id="gmail"] circle {
-    fill: ${MyTheme.colors.primaryText};
-  }
-
-  &:hover svg[id="gmail"] path {
-    fill: ${MyTheme.colors.primaryBgc}
-  }
-
-  &:hover svg[id="linked"] ellipse {
-    fill: ${MyTheme.colors.primaryText}
-  }
-
-  &:hover svg[id="linked"] path {
-    fill: ${MyTheme.colors.primaryBgc}
-  }
-
-  &:hover svg[id="git"] path {
-    fill: ${MyTheme.colors.primaryText}
-  }
-
-  &:hover svg[id="git"] circle {
-    fill: ${MyTheme.colors.primaryBgc}
-  }
-
-  &:hover svg {
-    transform: translateY(3px);
-  }
-
-  &:hover h3 {
-    transform: translateY(3px);
-  }
-`
-
-const Copyright = styled.small`
-    opacity: 0.5;
-`
-const StyledSocialNetworkTitle=styled.h3`
-  text-align: center;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 11.105px;
-  letter-spacing: 1.44px;
-  text-transform: uppercase;
-  color: ${MyTheme.colors.primaryText}
-`
