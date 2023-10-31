@@ -1,9 +1,13 @@
 import React from 'react';
-import styled from "styled-components";
-import ProjectTitlePhoto from "./../../../assets/images/project.webp";
-import {StyledText} from "../../../components/StyledText";
+import ProjectTitlePhoto from "./../../../assets/images/project.jpg";
+import ProjectTitlePhoto2x from "./../../../assets/images/project2x.jpg";
+import ProjectTitlePhoto3x from "./../../../assets/images/project3x.jpg";
+import ProjectTitlePhotoWebp from "./../../../assets/images/project.webp";
+import ProjectTitlePhotoWebp2x from "./../../../assets/images/project2x.webp";
+import ProjectTitlePhotoWebp3x from "./../../../assets/images/project3x.webp";
+import {S} from "./Project_Styles";
 import {FlexWrapper} from "../../../components/FlexWrapper";
-import {MyTheme} from "../../../components/styles/MyTheme.styles";
+import {StyledSpan} from "../../../components/StyledSpan";
 
 
 export const Project: React.FC<{ showAllProjects: boolean }> = (props) => {
@@ -73,189 +77,67 @@ export const Project: React.FC<{ showAllProjects: boolean }> = (props) => {
             {
                 !props.showAllProjects
                     ? ProjectsItemsStart.map((projectItem) => (
-                        <StyledProjectBox key={projectItem.projectId}>
+                        <S.ProjectBox key={projectItem.projectId}>
                             <FlexWrapper id="projectWrapper" direction="column">
-                                <StyledPhotoWrapper>
-                                    <StyledProjectLink id="projectLink" role="link" aria-label="LinkToGitHub"
-                                                       href={projectItem.linkOnGitHub}
-                                                       target="_blank">Link to GitHub</StyledProjectLink>
-                                    <StyledProjectTitlePhoto id="projectTitle" aria-label="project-title" role="img"
+                                <S.PhotoWrapper>
+                                    <S.ProjectLink id="projectLink" role="link" aria-label="LinkToGitHub"
+                                                   href={projectItem.linkOnGitHub}
+                                                   target="_blank">Link to GitHub</S.ProjectLink>
+                                    <picture>
+                                        <source
+                                            type="image/webp"
+                                            srcSet={`${ProjectTitlePhotoWebp} 1x,
+                                                 ${ProjectTitlePhotoWebp2x} 2x, ${ProjectTitlePhotoWebp3x} 3x`}
+                                        />
+                                        <source
+                                            type="image/jpeg"
+                                            srcSet={`${ProjectTitlePhoto} 1x, ${ProjectTitlePhoto2x} 2x, 
+                                                ${ProjectTitlePhoto3x} 3x`}
+                                        />
+                                        <S.ProjectTitlePhoto id="projectTitle" aria-label="project-title" role="img"
                                                              src={projectItem.projectTitlePhoto}
+                                                             srcSet={`${ProjectTitlePhoto2x} 2x, 
+                                                             ${ProjectTitlePhoto3x} 3x`}
                                                              alt="Project's Tittle photo is here"/>
-                                </StyledPhotoWrapper>
-                                <StyledProjectTitle role="heading"
-                                                    aria-level={3}>{projectItem.projectTitle}</StyledProjectTitle>
+                                    </picture>
+                                </S.PhotoWrapper>
+                                <S.ProjectTitle role="heading"
+                                                aria-level={3}>{projectItem.projectTitle}</S.ProjectTitle>
                                 <FlexWrapper id="skillsSpans" wrap="wrap">
                                     {projectItem.projectUsedSkills.map((skillItem: string, index: number) => (
                                         <StyledSpan key={index} role="generic" aria-label="tools">{skillItem}</StyledSpan>
                                     ))}
                                 </FlexWrapper>
-                                <StyledProjectText role="paragraph"
-                                                   aria-label="project-description">{projectItem.projectDescription}</StyledProjectText>
+                                <S.ProjectText role="paragraph"
+                                               aria-label="project-description">{projectItem.projectDescription}</S.ProjectText>
                             </FlexWrapper>
-                        </StyledProjectBox>
+                        </S.ProjectBox>
                     ))
                     : ProjectsItems.map((projectItem) => (
-                        <StyledProjectBox key={projectItem.projectId}>
+                        <S.ProjectBox key={projectItem.projectId}>
                             <FlexWrapper id="projectWrapper" direction="column">
-                                <StyledPhotoWrapper>
-                                    <StyledProjectLink id="projectLink" role="link" aria-label="LinkToGitHub"
-                                                       href={projectItem.linkOnGitHub}
-                                                       target="_blank">Link to GitHub</StyledProjectLink>
-                                    <StyledProjectTitlePhoto id="projectTitle" aria-label="project-title" role="img"
-                                                             src={projectItem.projectTitlePhoto}
-                                                             alt="Project's Tittle photo is here"/>
-                                </StyledPhotoWrapper>
-                                <StyledProjectTitle role="heading"
-                                                    aria-level={3}>{projectItem.projectTitle}</StyledProjectTitle>
+                                <S.PhotoWrapper>
+                                    <S.ProjectLink id="projectLink" role="link" aria-label="LinkToGitHub"
+                                                   href={projectItem.linkOnGitHub}
+                                                   target="_blank">Link to GitHub</S.ProjectLink>
+                                    <S.ProjectTitlePhoto id="projectTitle" aria-label="project-title" role="img"
+                                                         src={projectItem.projectTitlePhoto}
+                                                         alt="Project's Tittle photo is here"/>
+                                </S.PhotoWrapper>
+                                <S.ProjectTitle role="heading"
+                                                aria-level={3}>{projectItem.projectTitle}</S.ProjectTitle>
                                 <FlexWrapper id="skillsSpans" wrap="wrap">
                                     {projectItem.projectUsedSkills.map((skillItem: string, index: number) => (
                                         <StyledSpan role="generic" aria-label="tool" key={index}>{skillItem}</StyledSpan>
                                     ))}
                                 </FlexWrapper>
-                                <StyledProjectText role="paragraph"
-                                                   aria-label="project-description">{projectItem.projectDescription}</StyledProjectText>
+                                <S.ProjectText role="paragraph"
+                                               aria-label="project-description">{projectItem.projectDescription}</S.ProjectText>
                             </FlexWrapper>
-                        </StyledProjectBox>
+                        </S.ProjectBox>
                     ))
             }
         </>
     )
-
 }
-
-const StyledProjectBox = styled.div`
-  width: 363px;
-  flex-grow: 1;
-  
-
-
-  ${FlexWrapper}[id="skillsSpans"] {
-    height: auto;
-    gap: 12px;
-    padding: 11px 10px 0 26px;
-    @media ${MyTheme.media.mobile} {
-      padding: 11px 7px 0 18px;
-    }
-  }
-
-  ${FlexWrapper}[id="projectWrapper"] {
-    border-radius: 6px;
-    background-color: ${MyTheme.colors.secondaryBgc};
-  }
-
-  @media ${MyTheme.media.desktop} {
-    max-width: 522px;
-  }
-`
-const StyledProjectTitle = styled.h3`
-  color: #D9F2F2;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 29px 0 0 26px;
-  max-width: 450px;
-  @media ${MyTheme.media.mobile} {
-    padding: 16px 0 0 18px;
-  }
-
-`
-
-const StyledProjectTitlePhoto = styled.img`
-  width: 100%;
-  object-fit: cover;
-  aspect-ratio: 100 / 81;
-  max-height: 388px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  display: block;
-
-`
-export const StyledSpan = styled.span`
-  color: #1F2626;
-  text-align: center;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  display: inline-flex;
-  padding: 8px 16px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 4px;
-  background: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
-`
-const StyledProjectText = styled(StyledText)`
-  color: #BDEBEA;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.64px;
-  font-weight: 400;
-  padding: 19px 9px 32px 26px;
-  @media ${MyTheme.media.mobile} {
-    padding: 16px 7px 19px 18px;
-  }
-
-`
-
-const StyledPhotoWrapper = styled.div`
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-
-  &:hover a {
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%)
-  }
-
-  &:hover img {
-    transform: skew(30deg);
-    opacity: 0.5;
-    transition: .2s;
-  }
-  
-  @media ${MyTheme.media.tablet} {
-    a {
-      top: 50%;
-      right: 50%;
-      transform: translate(50%, -50%)
-    }
-    img {
-      transform: skew(30deg);
-      opacity: 0.5;
-    }
-  }
-`
-const StyledProjectLink = styled.a`
-  position: absolute;
-  top: 100%;
-  display: inline-flex;
-  padding: 12px 20px 13px 20px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  background-image: linear-gradient(90deg, #00F5A0 0%, #00F5A0 100%);
-  color: ${MyTheme.colors.secondaryText};
-  z-index: 1;
-  font-weight: 600;
-
-  &:focus-visible {
-    outline: none;
-    border: 3px solid ${MyTheme.colors.primaryText};
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
-  }
-}
-
-&:hover {
-  background-image: unset;
-  background-color: ${MyTheme.colors.primaryText};
-  color: ${MyTheme.colors.primaryBgc};
-  transform: translateY(3px);
-}
-
-`
 
