@@ -95,17 +95,7 @@ const Field= styled.input`
   }
 
 `
-const Error = styled.span`
-  position: absolute;
-  display: block;
-  right:0;
-  bottom:7px;
-  color: #C05353;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  align-content: center;
-`
+
 const Label = styled.label`
   font-size: 14px;
   font-weight: 400;
@@ -127,6 +117,5 @@ export const S= {
     PositionDiv,
     Label,
     Field,
-    Error,
     PseudoDiv
 }

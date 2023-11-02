@@ -4,6 +4,7 @@ import {StyledSectionTitle} from "../../../components/StyledSectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {S} from "./Skill_Styles";
 import {MainContainer} from "../../../components/MainContainer";
+import {Bounce} from "react-awesome-reveal";
 
 
 type SkillItemType = { iconId: string, skillItem: string, skillProgress: number, viewBox?: string }
@@ -18,16 +19,17 @@ const SkillItemsProps: SkillItemType[] = [
     {iconId: "stcSkill", skillItem: "STYLED COMPONENTS", skillProgress: 35},
     {iconId: "tsSkill", skillItem: "TYPESCRIPT", skillProgress: 55}
 ]
-export const Skills:React.FC = () => {
+export const Skills: React.FC = () => {
     return (
         <S.SkillSection role="region" aria-label="skills" id="Skills">
             <MainContainer>
                 <StyledSectionTitle role="heading" aria-level={2}>Skills</StyledSectionTitle>
                 <FlexWrapper id="skillwrapper" wrap="wrap" justify="center">
-                    {SkillItemsProps.map((itemProps) => (
-                        <Skill key={itemProps.iconId} iconId={itemProps.iconId} skillItem={itemProps.skillItem}
-                               skillProgress={itemProps.skillProgress}/>
-                    ))}
+                    <Bounce cascade={true} damping={.1} >
+                        {SkillItemsProps.map((itemProps) => (
+                            <Skill key={itemProps.iconId} iconId={itemProps.iconId} skillItem={itemProps.skillItem}
+                                   skillProgress={itemProps.skillProgress}/>
+                        ))} </Bounce>
                 </FlexWrapper>
             </MainContainer>
         </S.SkillSection>

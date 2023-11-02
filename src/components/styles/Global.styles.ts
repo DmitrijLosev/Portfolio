@@ -19,7 +19,7 @@ export const GlobalStyles=createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     color: ${MyTheme.colors.primaryText};
     background-color: ${MyTheme.colors.primaryBgc};
-    min-width:414px;
+    min-width:350px;
   }
 
   a {

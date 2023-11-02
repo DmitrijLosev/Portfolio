@@ -12,13 +12,13 @@ export const FooterMenu: React.FC<{ menuItems: string[], fontSize?: string, font
                 {props.menuItems.map((item, index) => (
                     <li role={"menuitem"} key={index}>
                         {item === "Contact Me" ? (
-                            <StyledNavLink role="link" aria-label="mail me" to="/contact" id={item}
+                            <StyledNavLink smooth={true} role="link" aria-label="mail me" to="/contact" id={item}
                                            fontSize={props.fontSize} fontWeight={props.fontWeight}
                             >
                                 {item}
                             </StyledNavLink>
                         ) : (
-                            <StyledNavLink role="link" aria-label={item}
+                            <StyledNavLink smooth={true} role="link" aria-label={item}
                                            to={`/#${item}`}
                                            id={`${item}-${index}`}
                                            fontSize={props.fontSize} fontWeight={props.fontWeight}

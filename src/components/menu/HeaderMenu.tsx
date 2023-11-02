@@ -11,7 +11,7 @@ export const HeaderMenu: React.FC<{ menuItems: string[]}> = (props) => {
             <ul id="linkMenu" role="menu" aria-label="menu">
                 {props.menuItems.map((item, index) => (
                     <li role={"menuitem"} key={index}>
-                            <StyledNavLink role="link" aria-label={item}
+                            <StyledNavLink smooth={true}  role="link" aria-label={item}
                                            to={`/#${item}`}
                                            id={`${item}-${index}`}
                                            type={index === 3 ? "colored" : undefined}

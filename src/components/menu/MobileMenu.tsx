@@ -14,11 +14,11 @@ export const MobileMenu: React.FC<{ menuItems: string[] }> = (props) => {
     return (
         <S.Menu role="navigation">
             <S.BurgerButton onClick={setChangeIsOpen} isOpen={isOpen}><span></span></S.BurgerButton>
-            <S.MobileMenuPopUp isOpen={isOpen}>
+            <S.MobileMenuPopUp isOpen={isOpen} onClick={()=>{changeIsOpen(false)}}>
                 <ul id="linkMenu" role="menu" aria-label="menu">
                     {props.menuItems.map((item, index) => (
                         <li role={"menuitem"} key={index}>
-                            <StyledNavLink onClick={setChangeIsOpen} role="link" aria-label={item}
+                            <StyledNavLink smooth={true} onClick={setChangeIsOpen} role="link" aria-label={item}
                                            to={`/#${item}`}
                                            id={`${item}-${index}`}
                             >

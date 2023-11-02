@@ -8,30 +8,11 @@ import ProjectTitlePhotoWebp3x from "./../../../assets/images/project3x.webp";
 import {S} from "./Project_Styles";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {StyledSpan} from "../../../components/StyledSpan";
+import {AnimatePresence} from "framer-motion";
 
 
 export const Project: React.FC<{ showAllProjects: boolean }> = (props) => {
 
-
-    const ProjectsItemsStart = [
-        {
-            projectId: 1,
-            projectTitlePhoto: ProjectTitlePhoto,
-            projectTitle: "SOCIAL NETWORK",
-            projectUsedSkills: ["JAVASCRIPT", "HTML 5", "CSS", "TYPESCRIPT"],
-            projectDescription: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. " +
-                "Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-            linkOnGitHub: "https://www.github.com/DmitrijLosev/losev-social-network"
-        },
-        {
-            projectId: 2,
-            projectTitlePhoto: ProjectTitlePhoto,
-            projectTitle: "PORTFOLIO",
-            projectUsedSkills: ["JAVASCRIPT", "HTML 5", "CSS", "TYPESCRIPT", "REDUX"],
-            projectDescription: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. " +
-                "Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-            linkOnGitHub: "https://www.github.com/DmitrijLosev/Portfolio"
-        }]
 
     const ProjectsItems = [
         {
@@ -72,12 +53,19 @@ export const Project: React.FC<{ showAllProjects: boolean }> = (props) => {
         }
     ]
 
+    const FilteredProjects = !props.showAllProjects
+        ? ProjectsItems.filter((p) => p.projectId <= 2)
+        : ProjectsItems;
 
     return (<>
-            {
-                !props.showAllProjects
-                    ? ProjectsItemsStart.map((projectItem) => (
-                        <S.ProjectBox key={projectItem.projectId}>
+            <AnimatePresence>
+                {FilteredProjects.map((projectItem) => (
+                        <S.ProjectBox key={projectItem.projectId}
+                                      initial={{opacity: 0}}
+                                      animate={{opacity: 1}}
+                                      exit={{opacity: 0}}
+                                      layout
+                        >
                             <FlexWrapper id="projectWrapper" direction="column">
                                 <S.PhotoWrapper>
                                     <S.ProjectLink id="projectLink" role="link" aria-label="LinkToGitHub"
@@ -105,38 +93,18 @@ export const Project: React.FC<{ showAllProjects: boolean }> = (props) => {
                                                 aria-level={3}>{projectItem.projectTitle}</S.ProjectTitle>
                                 <FlexWrapper id="skillsSpans" wrap="wrap">
                                     {projectItem.projectUsedSkills.map((skillItem: string, index: number) => (
-                                        <StyledSpan key={index} role="generic" aria-label="tools">{skillItem}</StyledSpan>
+                                        <StyledSpan key={index} role="generic"
+                                                    aria-label="tools">{skillItem}</StyledSpan>
                                     ))}
                                 </FlexWrapper>
                                 <S.ProjectText role="paragraph"
                                                aria-label="project-description">{projectItem.projectDescription}</S.ProjectText>
                             </FlexWrapper>
                         </S.ProjectBox>
-                    ))
-                    : ProjectsItems.map((projectItem) => (
-                        <S.ProjectBox key={projectItem.projectId}>
-                            <FlexWrapper id="projectWrapper" direction="column">
-                                <S.PhotoWrapper>
-                                    <S.ProjectLink id="projectLink" role="link" aria-label="LinkToGitHub"
-                                                   href={projectItem.linkOnGitHub}
-                                                   target="_blank">Link to GitHub</S.ProjectLink>
-                                    <S.ProjectTitlePhoto id="projectTitle" aria-label="project-title" role="img"
-                                                         src={projectItem.projectTitlePhoto}
-                                                         alt="Project's Tittle photo is here"/>
-                                </S.PhotoWrapper>
-                                <S.ProjectTitle role="heading"
-                                                aria-level={3}>{projectItem.projectTitle}</S.ProjectTitle>
-                                <FlexWrapper id="skillsSpans" wrap="wrap">
-                                    {projectItem.projectUsedSkills.map((skillItem: string, index: number) => (
-                                        <StyledSpan role="generic" aria-label="tool" key={index}>{skillItem}</StyledSpan>
-                                    ))}
-                                </FlexWrapper>
-                                <S.ProjectText role="paragraph"
-                                               aria-label="project-description">{projectItem.projectDescription}</S.ProjectText>
-                            </FlexWrapper>
-                        </S.ProjectBox>
-                    ))
-            }
+                    )
+                )
+                }
+            </AnimatePresence>
         </>
     )
 }

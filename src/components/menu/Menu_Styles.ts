@@ -5,19 +5,23 @@ const Menu = styled.nav`
   
   li {
     position: relative;
-    
+
+    &::before {
+      content: "";
+      display: inline-block;
+      background-image: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
+      border-radius: 4px;
+      position: absolute;
+      background-size: cover;
+      height: 0px;
+      width: 100%;
+      bottom: -12px;
+    }
 
     &:hover {
       &::before {
-        content: "";
-        display: inline-block;
-        background-image: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
-        border-radius: 4px;
-        position: absolute;
-        background-size: cover;
         height: 11px;
-        width: 100%;
-        bottom: -12px;
+        transition: .2s ease-in-out;
       }
     }
   }
@@ -93,31 +97,40 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
   }
 `
 const MobileMenuPopUp = styled.div<{ isOpen: boolean }>`
-padding-top: 100px;
-  display: none;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-100%);
 
-  ${props => props.isOpen && css<{ isOpen: boolean }>`
+  ul {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-` }
-    
-    ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    gap: 5px;
+    list-style: none;
+  }
+
+  ${props => props.isOpen && css<{ isOpen: boolean }>`
+    transform: translateY(0);
+
+    & ul {
       gap: 30px;
-      list-style: none;
+      transition: 1s ease-in-out;
     }
 
-    position: fixed;
-    background-color: rgba(34, 37, 37, 0.9);
-    top: -100px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
+    transition: .8s ease-in-out;
+  `}
+
+
+  position: fixed;
+  background-color: rgba(34, 37, 37, 0.9);
+  top: -100px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
 `
 export const S = {
     Menu,

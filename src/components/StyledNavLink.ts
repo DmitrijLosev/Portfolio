@@ -3,7 +3,7 @@ import {HashLink as NavLink} from "react-router-hash-link";
 import {MyTheme} from "./styles/MyTheme.styles";
 
 export const StyledNavLink = styled(NavLink)<{ type?: 'colored',
-  fontSize?:string, fontWeight?:string }>`
+  fontSize?:string, fontWeight?:string }> `
   color: ${MyTheme.colors.primaryText};
   font-size: ${props=>props.fontSize || "16px"};
   font-weight: ${props=>props.fontWeight || "500"};

@@ -6,7 +6,7 @@ import {S} from "./Logo_Styles";
 
 export const Logo:React.FC = () => {
     return (
-        <S.StyledLogoNavLink role="link" aria-label="main section" to="/#">
+        <S.StyledLogoNavLink smooth={true} role="link" aria-label="main section" to="/#">
             <FlexWrapper justify={'center'} align={'center'}>
             <Icon iconId="logo" />
             <span>Home</span>

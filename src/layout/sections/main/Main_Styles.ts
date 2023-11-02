@@ -6,6 +6,8 @@ import {font} from "../../../components/styles/Commons";
 import {StyledText} from "../../../components/StyledText";
 import code from "../../../assets/images/code.svg"
 import laptop from "../../../assets/images/laptop.svg"
+import {LazyLoadImage} from "react-lazy-load-image-component";
+import {HashLink as NavLink} from "react-router-hash-link";
 
 const StyledMain = styled.section`
   padding: 260px 0 132px 0;
@@ -44,7 +46,7 @@ const StyledMain = styled.section`
     }
   }
 `
-const ArrowLink = styled.a`
+const ArrowLink = styled(NavLink)`
   position: absolute;
   bottom: 0;
   right: 50%;
@@ -59,16 +61,15 @@ const ArrowLink = styled.a`
   &:hover svg {
     transform: scale(2) translateY(-10px);
     stroke: ${MyTheme.colors.thirdBgc};
-    transition: .2s;
+    transition: .2s ease-in-out;
   }
 `
 
-const StyledPhoto = styled.img`
+const StyledPhoto = styled(LazyLoadImage)`
   max-width: 461px;
   width: 100%;
   height: 332px;
   object-fit: cover;
-  
   object-position: center;
   display: block;
 
@@ -81,8 +82,11 @@ const StyledPhoto = styled.img`
 
 const MainTittle = styled.h1`
   padding-left:6px;
+  text-transform: uppercase;
   ${font({family: "Tinos, sans-serif", color: "#D7E5EC", Fmax: 20, Fmin: 16})};
-  
+  p {
+    display:none
+  }
 `
 const Name = styled.h2`
   background-image: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);

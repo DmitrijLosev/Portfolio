@@ -6,6 +6,7 @@ import {MainContainer} from "../../../components/MainContainer";
 import {StyledBtn} from "../../../components/StyledButton";
 import {S} from "./Project_Styles";
 
+
 export const Projects:React.FC = () => {
 
     const [showAllProjects, setShowAll]=useState<boolean>(false)

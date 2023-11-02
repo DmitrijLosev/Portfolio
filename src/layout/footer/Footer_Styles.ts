@@ -45,6 +45,7 @@ const SocialItem = styled.li`
 `
 
 const SocialNetworkLink = styled.a`
+ 
   
   &:hover svg[id="gmail"] circle {
     fill: ${MyTheme.colors.primaryText};
@@ -72,10 +73,12 @@ const SocialNetworkLink = styled.a`
 
   &:hover svg {
     transform: translateY(3px);
+    transition: .2s ease-in-out;
   }
 
   &:hover h3 {
     transform: translateY(3px);
+    transition: .2s ease-in-out;
   }
 `
 
