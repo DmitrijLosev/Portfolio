@@ -3,11 +3,13 @@ import {MainContainer} from "../../../components/MainContainer";
 import {MyTheme} from "../../../components/styles/MyTheme.styles";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {StyledText} from "../../../components/StyledText";
+import {motion} from "framer-motion"
 
 //Projects
 
 const ProjectsSection = styled.section`
-
+position: relative;
+  
   ${MainContainer} {
     padding-right: 50px;
     @media ${MyTheme.media.mobile} {
@@ -40,7 +42,7 @@ const ProjectsSection = styled.section`
 `
 //Project
 
-const ProjectBox = styled.div`
+const ProjectBox = styled(motion.div)`
   width: 363px;
   flex-grow: 1;
   
@@ -105,13 +107,14 @@ const PhotoWrapper = styled.div`
   &:hover a {
     top: 50%;
     right: 50%;
-    transform: translate(50%, -50%)
+    transform: translate(50%, -50%);
+    transition: .3s ease-in-out;
   }
 
   &:hover img {
     transform: skew(30deg);
     opacity: 0.5;
-    transition: .2s;
+    transition: .3s ease-in-out;
   }
   
   @media ${MyTheme.media.tablet} {

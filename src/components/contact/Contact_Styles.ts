@@ -5,7 +5,7 @@ import {MyTheme} from "../styles/MyTheme.styles";
 
 const ContactSection = styled.section`
   min-height: 100vh;
-  min-width: 414px;
+  min-width: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
